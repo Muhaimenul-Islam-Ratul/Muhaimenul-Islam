@@ -78,6 +78,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 2rem;height:62px;
   letter-spacing:.05em;transition:box-shadow .2s,transform .2s;
   box-shadow:0 0 14px rgba(0,229,255,.25)}
 .nav-btn:hover{box-shadow:0 0 24px rgba(0,229,255,.5);transform:translateY(-1px)}
+.nav-toggle{display:none;background:none;border:none;color:var(--text);cursor:pointer;z-index:210;padding:.25rem;transition:color .2s;outline:none}
+.nav-toggle:hover{color:var(--accent)}
+.nav-toggle .lucide{width:1.5rem;height:1.5rem}
+.mobile-only{display:none}
 
 /* ── SECTION BASE ── */
 section{padding:6rem 0;position:relative;z-index:2}
@@ -442,6 +446,64 @@ footer a{color:var(--accent);text-decoration:none}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
+  .nav-btn {
+    display: none;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .nav-list {
+    position: fixed;
+    top: 62px;
+    right: -100%;
+    width: 280px;
+    height: calc(100vh - 62px);
+    background: rgba(12, 22, 37, 0.96);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-left: 1px solid var(--border);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3rem 2rem;
+    gap: 1.5rem;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 199;
+  }
+  .nav-list.active {
+    right: 0;
+  }
+  .nav-list a {
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    padding: 0.5rem 0;
+  }
+  .mobile-only {
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-btn-mobile {
+    display: inline-block;
+    width: 80%;
+    padding: 0.6rem 1.5rem;
+    background: var(--accent);
+    color: #07090F;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    box-shadow: 0 0 14px rgba(0, 229, 255, 0.25);
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .nav-btn-mobile:hover {
+    box-shadow: 0 0 24px rgba(0, 229, 255, 0.5);
+    transform: translateY(-1px);
+  }
   .hero-grid,.shopify-grid,.contact-grid{grid-template-columns:1fr}
   .about-grid {
     grid-template-columns: 1fr;
@@ -468,8 +530,6 @@ footer a{color:var(--accent);text-decoration:none}
   .prof-grid{grid-template-columns:1fr}
 }
 @media(max-width:600px){
-  .nav-list{gap:.9rem}
-  .nav-list a{font-size:.68rem}
   .val-grid{grid-template-columns:1fr}
   .hero-stats {
     gap: 0.6rem;
@@ -508,8 +568,13 @@ footer a{color:var(--accent);text-decoration:none}
     <li><a href="#projects">Projects</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li class="mobile-only"><a href="mailto:miratul846@gmail.com" class="nav-btn-mobile">Hire Me</a></li>
   </ul>
   <a href="mailto:miratul846@gmail.com" class="nav-btn">Hire Me</a>
+  <button class="nav-toggle" aria-label="Toggle Navigation">
+    <i data-lucide="menu" class="hamburger-icon"></i>
+    <i data-lucide="x" class="close-icon" style="display: none;"></i>
+  </button>
 </nav>
 
 <!-- ══════════ 01 HERO ══════════ -->
@@ -1176,6 +1241,59 @@ addEventListener('scroll',()=>{
   secs.forEach(s=>{if(scrollY>=s.offsetTop-80)cur=s.id;});
   navAs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
 });
+
+/* ── MOBILE NAV TOGGLE ── */
+const navToggle = document.querySelector('.nav-toggle');
+const navList = document.querySelector('.nav-list');
+const navLinks = document.querySelectorAll('.nav-list a');
+
+if (navToggle && navList) {
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navToggle.classList.toggle('active');
+    navList.classList.toggle('active');
+    
+    // Toggle menu / close icons
+    const hamburgerIcon = navToggle.querySelector('.hamburger-icon');
+    const closeIcon = navToggle.querySelector('.close-icon');
+    if (hamburgerIcon && closeIcon) {
+      const isOpen = navList.classList.contains('active');
+      hamburgerIcon.style.display = isOpen ? 'none' : 'block';
+      closeIcon.style.display = isOpen ? 'block' : 'none';
+    }
+  });
+
+  // Close menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('active');
+      navList.classList.remove('active');
+      
+      const hamburgerIcon = navToggle.querySelector('.hamburger-icon');
+      const closeIcon = navToggle.querySelector('.close-icon');
+      if (hamburgerIcon && closeIcon) {
+        hamburgerIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+      }
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (navList.classList.contains('active') && !navList.contains(e.target) && !navToggle.contains(e.target)) {
+      navToggle.classList.remove('active');
+      navList.classList.remove('active');
+      
+      const hamburgerIcon = navToggle.querySelector('.hamburger-icon');
+      const closeIcon = navToggle.querySelector('.close-icon');
+      if (hamburgerIcon && closeIcon) {
+        hamburgerIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+      }
+    }
+  });
+}
+
 lucide.createIcons();
 
 /* ── PROJECT FILTERING ── */
