@@ -654,6 +654,26 @@ footer a{color:var(--accent);text-decoration:none}
     display: none;
   }
   section{padding:4rem 0}
+  
+  /* Skills 2-column grid for mobile */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .skill-card {
+    padding: 1rem 0.75rem;
+  }
+  .sc-cat {
+    margin-bottom: 0.75rem;
+    font-size: 0.58rem;
+  }
+  .sc-tags {
+    gap: 0.3rem;
+  }
+  .tag {
+    padding: 0.2rem 0.45rem;
+    font-size: 0.68rem;
+  }
 }
 @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 </style>
