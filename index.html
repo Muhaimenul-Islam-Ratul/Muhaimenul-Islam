@@ -418,6 +418,10 @@ section{padding:6rem 0;position:relative;z-index:2}
 }
 
 /* ── 7: SERVICES ── */
+.srv-slider-container {
+  position: relative;
+  width: 100%;
+}
 .srv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem}
 .srv-card{padding:1.75rem;background:var(--card);border:1px solid var(--border);border-radius:12px;
   transition:border-color .3s,transform .3s;text-align:center}
@@ -425,6 +429,9 @@ section{padding:6rem 0;position:relative;z-index:2}
 .srv-icon{font-size:2.25rem;margin-bottom:1rem;display:block}
 .srv-title{font-weight:700;font-size:1rem;margin-bottom:.6rem}
 .srv-desc{color:var(--muted2);font-size:.84rem;line-height:1.7}
+.srv-controls {
+  display: none;
+}
 
 /* ── 8: SHOPIFY ── */
 .shopify-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
@@ -695,6 +702,73 @@ footer a{color:var(--accent);text-decoration:none}
     scroll-snap-align: center;
     transform: none !important;
     opacity: 1 !important;
+  }
+
+  /* Mobile Services Slider (1 card at a time) */
+  .srv-grid {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 1.5rem;
+    padding: 0.5rem 0 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .srv-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .srv-card {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .srv-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .srv-ctrl-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    outline: none;
+  }
+  .srv-ctrl-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .srv-ctrl-btn .lucide {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .srv-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .srv-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border2);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  .srv-dot.active {
+    background-color: var(--accent);
+    transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
   }
 }
 @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
@@ -1045,36 +1119,51 @@ footer a{color:var(--accent);text-decoration:none}
     <p class="s-label reveal">What I offer</p>
     <h2 class="s-title reveal">My <em>Services</em></h2>
     <div class="divider reveal"></div>
-    <div class="srv-grid">
-      <div class="srv-card reveal">
-        <span class="srv-icon"><i data-lucide="atom"></i></span>
-        <h3 class="srv-title">React Development</h3>
-        <p class="srv-desc">Building dynamic, component-driven UIs with React.js — from SPAs to complex dashboards with state management and routing.</p>
+    <div class="srv-slider-container">
+      <div class="srv-grid">
+        <div class="srv-card reveal">
+          <span class="srv-icon"><i data-lucide="atom"></i></span>
+          <h3 class="srv-title">React Development</h3>
+          <p class="srv-desc">Building dynamic, component-driven UIs with React.js — from SPAs to complex dashboards with state management and routing.</p>
+        </div>
+        <div class="srv-card reveal">
+          <span class="srv-icon"><i data-lucide="server"></i></span>
+          <h3 class="srv-title">Full-Stack MERN Apps</h3>
+          <p class="srv-desc">End-to-end application development with MongoDB, Express, React, and Node.js — including REST APIs and authentication systems.</p>
+        </div>
+        <div class="srv-card reveal">
+          <span class="srv-icon"><img src="Icon/shopify.jpg" alt="Shopify" class="shopify-custom-icon"></span>
+          <h3 class="srv-title">Shopify Development</h3>
+          <p class="srv-desc">Custom Shopify theme development and storefront optimization using Liquid, HTML, CSS, and JavaScript for e-commerce businesses.</p>
+        </div>
+        <div class="srv-card reveal">
+          <span class="srv-icon"><i data-lucide="smartphone"></i></span>
+          <h3 class="srv-title">Responsive Design</h3>
+          <p class="srv-desc">Pixel-perfect, mobile-first responsive interfaces using Tailwind CSS, Bootstrap, and Material-UI that look great on any device.</p>
+        </div>
+        <div class="srv-card reveal">
+          <span class="srv-icon"><i data-lucide="lock"></i></span>
+          <h3 class="srv-title">Auth Systems</h3>
+          <p class="srv-desc">Secure authentication and authorization flows using Firebase Authentication, JWT tokens, and role-based access control.</p>
+        </div>
+        <div class="srv-card reveal">
+          <span class="srv-icon"><i data-lucide="plug"></i></span>
+          <h3 class="srv-title">REST API Integration</h3>
+          <p class="srv-desc">Connecting frontends to backends and third-party services through clean, well-documented REST API integrations.</p>
+        </div>
       </div>
-      <div class="srv-card reveal">
-        <span class="srv-icon"><i data-lucide="server"></i></span>
-        <h3 class="srv-title">Full-Stack MERN Apps</h3>
-        <p class="srv-desc">End-to-end application development with MongoDB, Express, React, and Node.js — including REST APIs and authentication systems.</p>
-      </div>
-      <div class="srv-card reveal">
-        <span class="srv-icon"><img src="Icon/shopify.jpg" alt="Shopify" class="shopify-custom-icon"></span>
-        <h3 class="srv-title">Shopify Development</h3>
-        <p class="srv-desc">Custom Shopify theme development and storefront optimization using Liquid, HTML, CSS, and JavaScript for e-commerce businesses.</p>
-      </div>
-      <div class="srv-card reveal">
-        <span class="srv-icon"><i data-lucide="smartphone"></i></span>
-        <h3 class="srv-title">Responsive Design</h3>
-        <p class="srv-desc">Pixel-perfect, mobile-first responsive interfaces using Tailwind CSS, Bootstrap, and Material-UI that look great on any device.</p>
-      </div>
-      <div class="srv-card reveal">
-        <span class="srv-icon"><i data-lucide="lock"></i></span>
-        <h3 class="srv-title">Auth Systems</h3>
-        <p class="srv-desc">Secure authentication and authorization flows using Firebase Authentication, JWT tokens, and role-based access control.</p>
-      </div>
-      <div class="srv-card reveal">
-        <span class="srv-icon"><i data-lucide="plug"></i></span>
-        <h3 class="srv-title">REST API Integration</h3>
-        <p class="srv-desc">Connecting frontends to backends and third-party services through clean, well-documented REST API integrations.</p>
+      <!-- Slider Controls for Mobile -->
+      <div class="srv-controls">
+        <button class="srv-ctrl-btn prev" aria-label="Previous Service"><i data-lucide="chevron-left"></i></button>
+        <div class="srv-dots">
+          <span class="srv-dot active" data-index="0"></span>
+          <span class="srv-dot" data-index="1"></span>
+          <span class="srv-dot" data-index="2"></span>
+          <span class="srv-dot" data-index="3"></span>
+          <span class="srv-dot" data-index="4"></span>
+          <span class="srv-dot" data-index="5"></span>
+        </div>
+        <button class="srv-ctrl-btn next" aria-label="Next Service"><i data-lucide="chevron-right"></i></button>
       </div>
     </div>
   </div>
@@ -1468,6 +1557,47 @@ if (navToggle && navList) {
         closeIcon.style.display = 'none';
       }
     }
+  });
+}
+
+/* ── SERVICES SLIDER ── */
+const srvGrid = document.querySelector('.srv-grid');
+const srvDots = document.querySelectorAll('.srv-dot');
+const srvPrevBtn = document.querySelector('.srv-ctrl-btn.prev');
+const srvNextBtn = document.querySelector('.srv-ctrl-btn.next');
+
+if (srvGrid && srvDots.length > 0) {
+  // Sync dots with scroll
+  srvGrid.addEventListener('scroll', () => {
+    const cardWidth = srvGrid.clientWidth;
+    const index = Math.round(srvGrid.scrollLeft / cardWidth);
+    
+    srvDots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === index);
+    });
+  });
+
+  // Next/Prev buttons
+  if (srvNextBtn) {
+    srvNextBtn.addEventListener('click', () => {
+      const cardWidth = srvGrid.clientWidth;
+      srvGrid.scrollLeft += cardWidth;
+    });
+  }
+  if (srvPrevBtn) {
+    srvPrevBtn.addEventListener('click', () => {
+      const cardWidth = srvGrid.clientWidth;
+      srvGrid.scrollLeft -= cardWidth;
+    });
+  }
+
+  // Dot clicks
+  srvDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.dataset.index);
+      const cardWidth = srvGrid.clientWidth;
+      srvGrid.scrollLeft = idx * cardWidth;
+    });
   });
 }
 
