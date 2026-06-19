@@ -341,6 +341,82 @@ section{padding:6rem 0;position:relative;z-index:2}
   transition:color .2s;border-bottom:1px solid transparent}
 .p-link:hover{border-bottom-color:var(--accent)}
 
+/* ── THESIS SECTION ── */
+.thesis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 4rem;
+  align-items: center;
+}
+.thesis-visual {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.thesis-img-container {
+  position: relative;
+  width: 500px;
+  height: 640px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 229, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.thesis-img-container:hover {
+  transform: translateY(-8px) rotate(-1deg);
+  box-shadow: 0 30px 60px rgba(0, 229, 255, 0.15), 0 0 0 1px rgba(0, 229, 255, 0.3);
+}
+.thesis-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.thesis-img-container:hover .thesis-img {
+  transform: scale(1.03);
+}
+.thesis-img-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.15), transparent 70%);
+  pointer-events: none;
+}
+.thesis-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.thesis-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--accent2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.thesis-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}
+.thesis-overview {
+  color: var(--muted2);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+.thesis-impact {
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  font-style: italic;
+}
+.thesis-actions {
+  margin-top: 1rem;
+}
+
 /* ── 7: SERVICES ── */
 .srv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem}
 .srv-card{padding:1.75rem;background:var(--card);border:1px solid var(--border);border-radius:12px;
@@ -528,6 +604,35 @@ footer a{color:var(--accent);text-decoration:none}
   .edu-grid{grid-template-columns:1fr}
   .val-grid{grid-template-columns:1fr 1fr}
   .prof-grid{grid-template-columns:1fr}
+  
+  /* Thesis responsive */
+  .thesis-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .thesis-visual {
+    order: 1;
+  }
+  .thesis-img-container {
+    width: 100%;
+    max-width: 320px;
+    height: 410px;
+  }
+  .thesis-text {
+    order: 2;
+    align-items: center;
+  }
+  .thesis-title {
+    font-size: 1.4rem;
+  }
+  .thesis-impact {
+    border-left: none;
+    border-top: 2px solid var(--accent);
+    padding-left: 0;
+    padding-top: 0.75rem;
+    max-width: 500px;
+  }
 }
 @media(max-width:600px){
   .val-grid{grid-template-columns:1fr}
@@ -566,6 +671,7 @@ footer a{color:var(--accent);text-decoration:none}
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#thesis">Thesis</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
     <li class="mobile-only"><a href="mailto:miratul846@gmail.com" class="nav-btn-mobile">Hire Me</a></li>
@@ -856,6 +962,35 @@ footer a{color:var(--accent);text-decoration:none}
           <h3 class="p-name">Custom Shopify Storefronts</h3>
           <p class="p-desc">Theme customization and responsive storefront development at Softvence using Liquid, HTML, CSS, and JavaScript for real client projects.</p>
           <div class="p-chips"><span class="chip">Shopify</span><span class="chip">Liquid</span><span class="chip">HTML</span><span class="chip">CSS</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 06.5 THESIS PUBLICATION ══════════ -->
+<section id="thesis">
+  <div class="wrap">
+    <p class="s-label reveal">My Research &amp; Publication</p>
+    <h2 class="s-title reveal">Thesis <em>Book</em></h2>
+    <div class="divider reveal"></div>
+    
+    <div class="thesis-grid">
+      <div class="thesis-visual reveal-l">
+        <div class="thesis-img-container">
+          <img src="book/Book%20Cover%20page.png" alt="Guava Diseases Thesis Book Cover" class="thesis-img">
+          <div class="thesis-img-glow"></div>
+        </div>
+      </div>
+      <div class="thesis-text reveal-r">
+        <p class="thesis-sub">Deep Learning &amp; Computer Vision</p>
+        <h3 class="thesis-title">Automated Classification, Detection, and Segmentation of Guava Diseases using Deep Learning</h3>
+        <p class="thesis-overview">People often refer to guava (Psidium guajava) as the "poor man's apple" or the "apple of the tropics." The leaves and fruit of guava are both very healthy because they are high in potassium, fiber, antioxidants, and vitamin C. Guava is very good for your health because it has nutrients that help your immune system, protect you from infections, improve digestion, keep your heart healthy, and lower high blood pressure. Guava does well in both tropical and subtropical places. Guava fruits and leaves are prone to various diseases that diminish yield, causing economic losses for farmers and health hazards for the populace.</p>
+        <p class="thesis-impact">This research presents an automated system using deep learning techniques (convolutional neural networks and segmentation architectures) to accurately classify, detect, and segment guava leaf and fruit diseases, offering a vital decision-support tool for farmers to protect yields and mitigate economic losses.</p>
+        <div class="thesis-actions">
+          <a href="book/Book.pdf" download="Automated_Guava_Disease_Detection_Thesis_Book.pdf" class="btn btn-p">
+            <i data-lucide="download"></i> Download Thesis Paper
+          </a>
         </div>
       </div>
     </div>
