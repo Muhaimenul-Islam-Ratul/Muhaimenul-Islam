@@ -1458,12 +1458,24 @@ footer a{color:var(--accent);text-decoration:none}
     margin-bottom: 1.75rem;
   }
   .about-pills-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.5rem;
     margin-bottom: 2rem;
+    width: 100%;
   }
   .about-pill {
-    padding: 0.5rem 0.85rem;
-    font-size: 0.78rem;
+    flex: 1 1 calc(50% - 0.5rem);
+    justify-content: center;
+    padding: 0.55rem 0.5rem;
+    font-size: 0.73rem;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .about-pill:nth-child(5) {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
   .about-stats-grid {
     gap: 0.75rem;
