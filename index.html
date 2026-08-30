@@ -674,12 +674,32 @@ section{padding:6rem 0;position:relative;z-index:2}
   color: #000000;
   box-shadow: 0 0 16px rgba(255, 230, 0, 0.3);
 }
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 1200px) {
+  .proj-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .proj-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .proj-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .p-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
+  min-width: 0;
   opacity: 0;
   transform: perspective(1000px) rotateX(10deg) translateY(35px) scale(0.97);
   filter: blur(3px);
@@ -1948,6 +1968,13 @@ footer a{color:var(--accent);text-decoration:none}
         </div>
       </div>
     </div>
+
+    <!-- View All / Load More Button -->
+    <div class="proj-load-more-wrap" style="text-align: center; margin-top: 3rem; display: none;">
+      <button id="projLoadMoreBtn" class="btn btn-p" style="padding: 0.85rem 2.4rem; font-size: 0.92rem; border-radius: 30px;">
+        <i data-lucide="grid"></i> View All Projects
+      </button>
+    </div>
   </div>
 </section>
 
@@ -2482,10 +2509,57 @@ if (srvGrid && srvDots.length > 0) {
 
 lucide.createIcons();
 
-/* ── PROJECT FILTERING ── */
+/* ── PROJECT FILTERING & VIEW MORE (8 PER BATCH) ── */
 const tabBtns = document.querySelectorAll('.tab-btn');
 const projCards = document.querySelectorAll('.p-card');
 const projGrid = document.querySelector('.proj-grid');
+const projLoadMoreBtn = document.getElementById('projLoadMoreBtn');
+const projLoadMoreWrap = document.querySelector('.proj-load-more-wrap');
+
+let currentLimit = 8;
+let currentFilter = 'all';
+
+function updateProjectVisibility() {
+  let matchingCount = 0;
+
+  projCards.forEach(card => {
+    const cat = card.dataset.category || '';
+    const matchesFilter = (currentFilter === 'all' || cat.includes(currentFilter));
+
+    if (matchesFilter) {
+      matchingCount++;
+      if (matchingCount <= currentLimit) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  if (projLoadMoreWrap) {
+    if (matchingCount > currentLimit) {
+      projLoadMoreWrap.style.display = 'block';
+      if (projLoadMoreBtn) {
+        const remaining = matchingCount - currentLimit;
+        projLoadMoreBtn.innerHTML = `<i data-lucide="grid"></i> View All (${remaining} More Projects)`;
+        if (window.lucide) lucide.createIcons();
+      }
+    } else {
+      projLoadMoreWrap.style.display = 'none';
+    }
+  }
+}
+
+updateProjectVisibility();
+
+if (projLoadMoreBtn) {
+  projLoadMoreBtn.addEventListener('click', () => {
+    currentLimit += 8;
+    updateProjectVisibility();
+  });
+}
 
 if (tabBtns.length > 0 && projCards.length > 0) {
   tabBtns.forEach(btn => {
@@ -2493,22 +2567,15 @@ if (tabBtns.length > 0 && projCards.length > 0) {
       tabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const filter = btn.dataset.filter;
+      currentFilter = btn.dataset.filter || 'all';
+      currentLimit = 8;
 
       projGrid.style.opacity = '0';
       projGrid.style.transform = 'translateY(10px)';
       projGrid.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
 
       setTimeout(() => {
-        projCards.forEach(card => {
-          const cat = card.dataset.category || '';
-          if (filter === 'all' || cat.includes(filter)) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-
+        updateProjectVisibility();
         projGrid.style.opacity = '1';
         projGrid.style.transform = 'translateY(0)';
       }, 250);
