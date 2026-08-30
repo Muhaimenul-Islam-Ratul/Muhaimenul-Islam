@@ -450,13 +450,16 @@ section{padding:6rem 0;position:relative;z-index:2}
 
 @media (max-width: 768px) {
   #hero {
-    height: auto;
-    min-height: 100vh;
-    padding-top: 68px;
-    padding-bottom: 1rem;
+    height: auto !important;
+    max-height: none !important;
+    min-height: auto !important;
+    padding-top: 80px !important;
+    padding-bottom: 2rem !important;
+    overflow: visible !important;
+    align-items: flex-start !important;
   }
   .hero-typography-layer {
-    padding: 4.8rem 1rem 1rem 1rem;
+    padding: 5rem 1rem 1rem 1rem;
     opacity: 0.16;
   }
   .hero-text-top {
@@ -467,49 +470,49 @@ section{padding:6rem 0;position:relative;z-index:2}
   }
   .hero-editorial-wrap {
     grid-template-columns: 1fr;
-    gap: 0.25rem;
+    gap: 0.5rem;
     padding: 0 1rem;
-    height: auto;
-    min-height: auto;
+    height: auto !important;
+    min-height: auto !important;
     align-items: flex-start;
   }
   .hero-left-block {
     align-items: center;
     text-align: center;
-    gap: 0.4rem;
+    gap: 0.3rem;
     padding-bottom: 0;
   }
   .hero-year-tag {
-    font-size: 0.95rem;
-    margin-bottom: 0.1rem;
+    font-size: 0.85rem;
+    margin-bottom: 0;
   }
   .hero-meta-divider {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.2rem;
+    gap: 0.4rem;
+    margin-bottom: 0.1rem;
   }
   .hero-line {
-    width: 30px;
+    width: 20px;
     height: 1.5px;
     background: rgba(255, 255, 255, 0.6);
   }
   .hero-meta-label {
     writing-mode: horizontal-tb;
     transform: none;
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
   }
   .hero-signature-box {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
   }
   .hero-signature {
-    font-size: clamp(2.2rem, 8vw, 3.2rem);
+    font-size: clamp(1.9rem, 7vw, 2.8rem);
   }
   .hero-tagline {
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
+    font-size: 0.68rem;
+    letter-spacing: 0.11em;
     max-width: 290px;
     margin: 0 auto;
   }
@@ -521,13 +524,9 @@ section{padding:6rem 0;position:relative;z-index:2}
     margin-bottom: 0;
   }
   .hero-portrait-img {
-    height: clamp(380px, 64vh, 560px);
+    height: clamp(300px, 50vw, 440px);
     width: auto;
-  }
-  @media (max-width: 480px) {
-    .hero-portrait-img {
-      height: clamp(360px, 68vh, 540px);
-    }
+    max-width: 90%;
   }
   .hero-action-btns {
     justify-content: center;
