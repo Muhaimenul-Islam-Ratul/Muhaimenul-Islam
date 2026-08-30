@@ -992,40 +992,33 @@ section{padding:6rem 0;position:relative;z-index:2}
   position: relative;
   overflow: hidden;
 }
-.edu-wrapper {
+.edu-container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
-}
-.edu-grid {
   display: grid;
-  grid-template-columns: 1fr 0.3fr 1.3fr;
-  gap: 2.5rem;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 3.5rem;
   align-items: start;
 }
 
 /* Left Column */
-.edu-left-col {
+.edu-left-sticky {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  position: sticky;
+  top: 100px;
 }
-.edu-header-sub {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  color: var(--accent);
-  text-transform: uppercase;
-}
-.edu-heading {
+.edu-title {
   font-family: 'Stack Sans Text', 'Space Grotesk', sans-serif;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
   font-weight: 800;
   color: #FFFFFF;
-  line-height: 1.1;
+  line-height: 1.15;
   margin-top: 0.2rem;
 }
-.edu-heading em {
+.edu-title em {
   font-style: normal;
   color: var(--accent);
 }
@@ -1039,24 +1032,23 @@ section{padding:6rem 0;position:relative;z-index:2}
   color: var(--muted2);
   font-size: 0.95rem;
   line-height: 1.7;
-  max-width: 360px;
+  max-width: 380px;
 }
 
-/* Quote Box */
+/* Quote Card */
 .edu-quote-card {
   background: #0E0E12;
   border: 1px solid #1E1E26;
   border-radius: 14px;
-  padding: 1.8rem;
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  position: relative;
+  gap: 0.6rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 .edu-quote-icon {
   font-family: Georgia, serif;
-  font-size: 3rem;
+  font-size: 2.8rem;
   line-height: 0.8;
   color: var(--accent);
 }
@@ -1073,7 +1065,7 @@ section{padding:6rem 0;position:relative;z-index:2}
   margin-top: 0.4rem;
 }
 
-/* Stats Box Grid */
+/* Stats Box */
 .edu-stats-card {
   background: #0E0E12;
   border: 1px solid #1E1E26;
@@ -1081,17 +1073,17 @@ section{padding:6rem 0;position:relative;z-index:2}
   padding: 1.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  gap: 1.2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 .edu-stat-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.8rem;
+  gap: 0.75rem;
 }
 .edu-stat-icon {
   color: var(--accent);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1103,97 +1095,100 @@ section{padding:6rem 0;position:relative;z-index:2}
 }
 .edu-stat-val {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--accent);
   line-height: 1.1;
 }
 .edu-stat-lbl {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   margin-top: 0.2rem;
 }
 
-/* Middle Timeline Column */
-.edu-timeline-col {
+/* Right Side Timeline Stream */
+.edu-timeline-stream {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
-  padding: 1rem 0;
-  height: 100%;
+  gap: 2rem;
 }
-.edu-timeline-line {
+.edu-stream-line {
   position: absolute;
-  top: 30px;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 25px;
+  bottom: 25px;
+  left: 165px;
   width: 2px;
   background: #2A2A36;
   z-index: 1;
 }
 
-.edu-timeline-node-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.edu-timeline-row {
+  display: grid;
+  grid-template-columns: 120px 52px 1fr;
+  gap: 1.25rem;
+  align-items: start;
   position: relative;
   z-index: 2;
-  margin-bottom: 3.8rem;
 }
-.edu-timeline-node-group:last-child {
-  margin-bottom: 0;
-}
-.edu-node-date {
+
+.edu-row-date {
   font-family: 'Space Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--accent);
-  text-align: center;
-  margin-bottom: 0.5rem;
-  white-space: nowrap;
+  text-align: right;
+  padding-top: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.3;
   letter-spacing: 0.05em;
 }
+.edu-row-date .dash {
+  color: var(--muted);
+  margin: 0.1rem 0;
+}
+
+.edu-row-node {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.35rem;
+}
 .edu-node-circle {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: #0E0E12;
-  border: 2px solid var(--accent);
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
+  background: #0E0E12 !important;
+  border: 2px solid var(--accent) !important;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--accent);
-  box-shadow: 0 0 16px rgba(255, 230, 0, 0.3);
+  font-size: 1.35rem;
+  box-shadow: 0 0 20px rgba(255, 230, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
 }
 .edu-node-circle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 24px rgba(255, 230, 0, 0.5);
+  transform: scale(1.12);
+  box-shadow: 0 0 28px rgba(255, 230, 0, 0.6);
 }
 
-/* Right Cards Column */
-.edu-cards-col {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.edu-card {
+.edu-row-card {
   background: #0E0E12;
   border: 1px solid #1E1E26;
   border-radius: 14px;
   padding: 1.6rem;
-  position: relative;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
-.edu-card:hover {
+.edu-row-card:hover {
   transform: translateY(-4px);
   border-color: rgba(255, 230, 0, 0.4);
 }
-.edu-card.featured {
+.edu-row-card.featured {
   border: 2px solid var(--accent);
   box-shadow: 0 0 30px rgba(255, 230, 0, 0.18);
 }
@@ -1243,11 +1238,20 @@ section{padding:6rem 0;position:relative;z-index:2}
 }
 
 @media (max-width: 992px) {
-  .edu-grid {
+  .edu-container {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3rem;
   }
-  .edu-timeline-col {
+  .edu-left-sticky {
+    position: static;
+  }
+  .edu-stream-line {
+    left: 23px;
+  }
+  .edu-timeline-row {
+    grid-template-columns: 46px 1fr;
+  }
+  .edu-row-date {
     display: none;
   }
 }
@@ -1836,114 +1840,123 @@ footer a{color:var(--accent);text-decoration:none}
 
 <!-- ══════════ 05.5 MY EDUCATION ══════════ -->
 <section id="education">
-  <div class="edu-wrapper">
-    <div class="edu-grid">
-      <!-- Left Column: Header, Quote & Stats -->
-      <div class="edu-left-col reveal-l">
-        <div>
-          <p class="edu-header-sub">ACADEMIC PATH</p>
-          <h2 class="edu-heading">My <em>Education</em></h2>
-          <div class="edu-yellow-line" style="margin-top: 0.8rem; margin-bottom: 1rem;"></div>
-          <p class="edu-subdesc">A strong academic foundation in computer science and problem-solving, built step by step.</p>
-        </div>
+  <div class="edu-container">
+    <!-- Left Column: Header, Quote & Stats -->
+    <div class="edu-left-sticky reveal-l">
+      <div>
+        <p class="s-label" style="color: var(--accent); letter-spacing: 0.2em;">ACADEMIC PATH</p>
+        <h2 class="edu-title">My <em>Education</em></h2>
+        <div class="edu-yellow-line" style="margin-top: 0.8rem; margin-bottom: 1rem;"></div>
+        <p class="edu-subdesc">A strong academic foundation in computer science and problem-solving, built step by step.</p>
+      </div>
 
-        <!-- Quote Card -->
-        <div class="edu-quote-card">
-          <span class="edu-quote-icon">“</span>
-          <p class="edu-quote-text">Education is not just about learning, it's about building a mindset for the future.</p>
-          <div class="edu-quote-bar"></div>
-        </div>
+      <!-- Quote Card -->
+      <div class="edu-quote-card">
+        <span class="edu-quote-icon">“</span>
+        <p class="edu-quote-text">Education is not just about learning, it's about building a mindset for the future.</p>
+        <div class="edu-quote-bar"></div>
+      </div>
 
-        <!-- Stats 2x2 Grid -->
-        <div class="edu-stats-card">
-          <div class="edu-stat-item">
-            <div class="edu-stat-icon"><i data-lucide="graduation-cap"></i></div>
-            <div class="edu-stat-info">
-              <span class="edu-stat-val">4</span>
-              <span class="edu-stat-lbl">Degrees</span>
-            </div>
+      <!-- Stats 2x2 Grid -->
+      <div class="edu-stats-card">
+        <div class="edu-stat-item">
+          <div class="edu-stat-icon"><i data-lucide="graduation-cap"></i></div>
+          <div class="edu-stat-info">
+            <span class="edu-stat-val">4</span>
+            <span class="edu-stat-lbl">Degrees</span>
           </div>
-          <div class="edu-stat-item">
-            <div class="edu-stat-icon"><i data-lucide="star"></i></div>
-            <div class="edu-stat-info">
-              <span class="edu-stat-val">3.82</span>
-              <span class="edu-stat-lbl">Highest CGPA</span>
-            </div>
+        </div>
+        <div class="edu-stat-item">
+          <div class="edu-stat-icon"><i data-lucide="star"></i></div>
+          <div class="edu-stat-info">
+            <span class="edu-stat-val">3.82</span>
+            <span class="edu-stat-lbl">Highest CGPA</span>
           </div>
-          <div class="edu-stat-item">
-            <div class="edu-stat-icon"><i data-lucide="calendar"></i></div>
-            <div class="edu-stat-info">
-              <span class="edu-stat-val">2014 - 2025</span>
-              <span class="edu-stat-lbl">Academic Journey</span>
-            </div>
+        </div>
+        <div class="edu-stat-item">
+          <div class="edu-stat-icon"><i data-lucide="calendar"></i></div>
+          <div class="edu-stat-info">
+            <span class="edu-stat-val">2014 - 2025</span>
+            <span class="edu-stat-lbl">Academic Journey</span>
           </div>
-          <div class="edu-stat-item">
-            <div class="edu-stat-icon"><i data-lucide="trophy"></i></div>
-            <div class="edu-stat-info">
-              <span class="edu-stat-val">4.67</span>
-              <span class="edu-stat-lbl">Highest GPA</span>
-            </div>
+        </div>
+        <div class="edu-stat-item">
+          <div class="edu-stat-icon"><i data-lucide="trophy"></i></div>
+          <div class="edu-stat-info">
+            <span class="edu-stat-val">4.67</span>
+            <span class="edu-stat-lbl">Highest GPA</span>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Center Timeline Column -->
-      <div class="edu-timeline-col reveal">
-        <div class="edu-timeline-line"></div>
+    <!-- Right Side: Synchronized Timeline Stream -->
+    <div class="edu-timeline-stream reveal-r">
+      <div class="edu-stream-line"></div>
 
-        <!-- Node 1 -->
-        <div class="edu-timeline-node-group">
-          <span class="edu-node-date">JAN 2022<br>–<br>DEC 2025</span>
+      <!-- Timeline Row 1: Bachelor Degree (Featured) -->
+      <div class="edu-timeline-row">
+        <div class="edu-row-date">
+          <span>JAN 2022</span>
+          <span class="dash">–</span>
+          <span>DEC 2025</span>
+        </div>
+        <div class="edu-row-node">
           <div class="edu-node-circle"><i data-lucide="graduation-cap"></i></div>
         </div>
-
-        <!-- Node 2 -->
-        <div class="edu-timeline-node-group">
-          <span class="edu-node-date">2020</span>
-          <div class="edu-node-circle"><i data-lucide="book-open"></i></div>
-        </div>
-
-        <!-- Node 3 -->
-        <div class="edu-timeline-node-group">
-          <span class="edu-node-date">2015<br>–<br>2018</span>
-          <div class="edu-node-circle"><i data-lucide="file-text"></i></div>
-        </div>
-
-        <!-- Node 4 -->
-        <div class="edu-timeline-node-group">
-          <span class="edu-node-date">2014<br>–<br>2015</span>
-          <div class="edu-node-circle"><i data-lucide="award"></i></div>
-        </div>
-      </div>
-
-      <!-- Right Cards Column -->
-      <div class="edu-cards-col reveal-r">
-        <!-- 1. Bachelor Degree (Featured) -->
-        <div class="edu-card featured">
+        <div class="edu-row-card featured">
           <span class="edu-card-tag">BACHELOR DEGREE</span>
           <h3 class="edu-card-title">Bachelor of Science in Computer Science &amp; Engineering</h3>
           <div class="edu-school"><i data-lucide="landmark"></i> Dhaka International University</div>
           <p class="edu-card-desc">Comprehensive study of algorithms, data structures, software engineering, web technologies, and computer architecture. Graduated with strong practical project work.</p>
           <span class="edu-pill">CGPA 3.82</span>
         </div>
+      </div>
 
-        <!-- 2. HSC -->
-        <div class="edu-card">
+      <!-- Timeline Row 2: HSC -->
+      <div class="edu-timeline-row">
+        <div class="edu-row-date">
+          <span>2020</span>
+        </div>
+        <div class="edu-row-node">
+          <div class="edu-node-circle"><i data-lucide="book-open"></i></div>
+        </div>
+        <div class="edu-row-card">
           <span class="edu-card-tag">HIGHER SECONDARY CERTIFICATE (HSC)</span>
           <h3 class="edu-card-title">Moulvibazar Govt. College, Sylhet</h3>
           <p class="edu-card-desc">Completed higher secondary education in the Science stream with outstanding academic performance.</p>
           <span class="edu-pill">GPA 4.67</span>
         </div>
+      </div>
 
-        <!-- 3. SSC -->
-        <div class="edu-card">
+      <!-- Timeline Row 3: SSC -->
+      <div class="edu-timeline-row">
+        <div class="edu-row-date">
+          <span>2015</span>
+          <span class="dash">–</span>
+          <span>2018</span>
+        </div>
+        <div class="edu-row-node">
+          <div class="edu-node-circle"><i data-lucide="file-text"></i></div>
+        </div>
+        <div class="edu-row-card">
           <span class="edu-card-tag">SECONDARY SCHOOL CERTIFICATE (SSC)</span>
           <h3 class="edu-card-title">Shah Helal High School</h3>
           <p class="edu-card-desc">Specialized in Science and Mathematics, with a passion for problem-solving and coding.</p>
         </div>
+      </div>
 
-        <!-- 4. PSC -->
-        <div class="edu-card">
+      <!-- Timeline Row 4: PSC -->
+      <div class="edu-timeline-row">
+        <div class="edu-row-date">
+          <span>2014</span>
+          <span class="dash">–</span>
+          <span>2015</span>
+        </div>
+        <div class="edu-row-node">
+          <div class="edu-node-circle"><i data-lucide="pencil"></i></div>
+        </div>
+        <div class="edu-row-card">
           <span class="edu-card-tag">PRIMARY SCHOOL CERTIFICATE (PSC)</span>
           <h3 class="edu-card-title">Mostofapur Government Primary School</h3>
           <p class="edu-card-desc">Specialized in Science and Mathematics, with a passion for problem-solving and coding.</p>
