@@ -641,7 +641,85 @@ section{padding:6rem 0;position:relative;z-index:2}
 .t-list{list-style:none;margin-top:.65rem}
 .t-list li{color:var(--muted2);font-size:.88rem;line-height:1.7;padding-left:1rem;
   position:relative;margin-bottom:.3rem}
-.t-list li::before{content:'›';position:absolute;left:0;color:var(--accent)}
+/* ── TOOLBOX / TOOLS & TECHNOLOGIES SECTION ── */
+#skills {
+  background: var(--bg);
+  padding: 6rem 0;
+  position: relative;
+}
+.toolbox-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1.1rem;
+}
+
+.tool-box-card {
+  background: #0B0B0F;
+  border: 1px solid #1C1C26;
+  border-radius: 14px;
+  padding: 1.6rem 0.8rem 1.4rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  min-height: 145px;
+}
+
+.tool-box-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--tool-color, var(--accent));
+  box-shadow: 0 0 25px var(--tool-glow, rgba(255, 230, 0, 0.25));
+}
+
+.tool-icon-wrap {
+  font-size: 2.2rem;
+  color: var(--tool-color, var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.2rem;
+  transition: transform 0.3s ease;
+}
+.tool-box-card:hover .tool-icon-wrap {
+  transform: scale(1.15);
+}
+
+.tool-title-name {
+  font-family: 'Stack Sans Text', 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.tool-cat-lbl {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 1200px) {
+  .toolbox-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .toolbox-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+  }
+}
+@media (max-width: 480px) {
+  .toolbox-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
 
 /* ── 6: PROJECTS ── */
 .proj-tabs {
@@ -1585,55 +1663,110 @@ footer a{color:var(--accent);text-decoration:none}
   </div>
 </section>
 
-<!-- ══════════ 03 SKILLS ══════════ -->
+<!-- ══════════ 03 TOOLS & TECHNOLOGIES ══════════ -->
 <section id="skills">
   <div class="wrap">
-    <p class="s-label reveal">What I know</p>
-    <h2 class="s-title reveal">Technical <em>Skills</em></h2>
-    <div class="divider reveal"></div>
-    <div class="skills-grid">
-      <div class="skill-card reveal">
-        <p class="sc-cat">Frontend</p>
-        <div class="sc-tags">
-          <span class="tag">HTML5</span><span class="tag">CSS3</span>
-          <span class="tag">JavaScript ES6+</span><span class="tag">React.js</span>
-          <span class="tag">Responsive Design</span>
-        </div>
+    <p class="s-label reveal">MY TOOLBOX</p>
+    <h2 class="s-title reveal">Tools &amp; <em>Technologies</em></h2>
+    <div class="divider reveal" style="margin-bottom: 3rem;"></div>
+    
+    <div class="toolbox-grid">
+      <!-- 1. React.js -->
+      <div class="tool-box-card reveal" style="--tool-color: #61DAFB; --tool-glow: rgba(97, 218, 251, 0.35);">
+        <div class="tool-icon-wrap"><i data-lucide="atom"></i></div>
+        <span class="tool-title-name">React.js</span>
+        <span class="tool-cat-lbl">Frontend</span>
       </div>
-      <div class="skill-card reveal">
-        <p class="sc-cat">Backend</p>
-        <div class="sc-tags">
-          <span class="tag">Node.js</span><span class="tag">Express.js</span>
-          <span class="tag">REST API</span><span class="tag">Firebase Auth</span>
-        </div>
+
+      <!-- 2. Node.js -->
+      <div class="tool-box-card reveal" style="--tool-color: #22C55E; --tool-glow: rgba(34, 197, 94, 0.35);">
+        <div class="tool-icon-wrap"><i data-lucide="server"></i></div>
+        <span class="tool-title-name">Node.js</span>
+        <span class="tool-cat-lbl">Backend</span>
       </div>
-      <div class="skill-card reveal">
-        <p class="sc-cat">Database</p>
-        <div class="sc-tags">
-          <span class="tag">MongoDB</span><span class="tag">Mongoose</span>
-          <span class="tag">Firebase Firestore</span>
-        </div>
+
+      <!-- 3. MongoDB -->
+      <div class="tool-box-card reveal" style="--tool-color: #10B981; --tool-glow: rgba(16, 185, 129, 0.35);">
+        <div class="tool-icon-wrap"><i data-lucide="database"></i></div>
+        <span class="tool-title-name">MongoDB</span>
+        <span class="tool-cat-lbl">Database</span>
       </div>
-      <div class="skill-card reveal">
-        <p class="sc-cat">UI Frameworks</p>
-        <div class="sc-tags">
-          <span class="tag">Tailwind CSS</span><span class="tag">Bootstrap</span>
-          <span class="tag">Material-UI</span>
-        </div>
+
+      <!-- 4. Firebase -->
+      <div class="tool-box-card reveal" style="--tool-color: #F59E0B; --tool-glow: rgba(245, 158, 11, 0.35);">
+        <div class="tool-icon-wrap"><i data-lucide="flame"></i></div>
+        <span class="tool-title-name">Firebase</span>
+        <span class="tool-cat-lbl">Auth / DB</span>
       </div>
-      <div class="skill-card reveal">
-        <p class="sc-cat">Shopify</p>
-        <div class="sc-tags">
-          <span class="tag">Liquid</span><span class="tag">Theme Customization</span>
-          <span class="tag">Storefront UI</span>
-        </div>
+
+      <!-- 5. Tailwind -->
+      <div class="tool-box-card reveal" style="--tool-color: #06B6D4; --tool-glow: rgba(6, 182, 212, 0.35);">
+        <div class="tool-icon-wrap"><i data-lucide="wind"></i></div>
+        <span class="tool-title-name">Tailwind</span>
+        <span class="tool-cat-lbl">CSS Framework</span>
       </div>
-      <div class="skill-card reveal">
-        <p class="sc-cat">Tools</p>
-        <div class="sc-tags">
-          <span class="tag">Git</span><span class="tag">GitHub</span>
-          <span class="tag">VS Code</span><span class="tag">Postman</span>
-        </div>
+
+      <!-- 6. Bootstrap -->
+      <div class="tool-box-card reveal" style="--tool-color: #8B5CF6; --tool-glow: rgba(139, 92, 246, 0.35);">
+        <div class="tool-icon-wrap"><i data-lucide="layout-grid"></i></div>
+        <span class="tool-title-name">Bootstrap</span>
+        <span class="tool-cat-lbl">UI Library</span>
+      </div>
+
+      <!-- 7. GitHub -->
+      <div class="tool-box-card reveal" style="--tool-color: #FFFFFF; --tool-glow: rgba(255, 255, 255, 0.35);">
+        <div class="tool-icon-wrap"><img src="Icon/social.png" alt="GitHub" class="github-custom-icon" style="width: 2.2rem; height: 2.2rem;"></div>
+        <span class="tool-title-name">GitHub</span>
+        <span class="tool-cat-lbl">Version Control</span>
+      </div>
+
+      <!-- 8. VS Code -->
+      <div class="tool-box-card reveal" style="--tool-color: #3B82F6; --tool-glow: rgba(59, 130, 246, 0.35);">
+        <div class="tool-icon-wrap"><i data-lucide="code-2"></i></div>
+        <span class="tool-title-name">VS Code</span>
+        <span class="tool-cat-lbl">Editor</span>
+      </div>
+
+      <!-- 9. Shopify -->
+      <div class="tool-box-card reveal" style="--tool-color: #95BF47; --tool-glow: rgba(149, 191, 71, 0.35);">
+        <div class="tool-icon-wrap"><img src="Icon/shopify.jpg" alt="Shopify" class="shopify-custom-icon" style="width: 2.2rem; height: 2.2rem; border-radius: 6px;"></div>
+        <span class="tool-title-name">Shopify</span>
+        <span class="tool-cat-lbl">E-Commerce</span>
+      </div>
+
+      <!-- 10. Postman -->
+      <div class="tool-box-card reveal" style="--tool-color: #FF6C37; --tool-glow: rgba(255, 108, 55, 0.35);">
+        <div class="tool-icon-wrap"><i data-lucide="send"></i></div>
+        <span class="tool-title-name">Postman</span>
+        <span class="tool-cat-lbl">API Testing</span>
+      </div>
+
+      <!-- 11. Figma -->
+      <div class="tool-box-card reveal" style="--tool-color: #F24E1E; --tool-glow: rgba(242, 78, 30, 0.35);">
+        <div class="tool-icon-wrap"><i data-lucide="palette"></i></div>
+        <span class="tool-title-name">Figma</span>
+        <span class="tool-cat-lbl">Design</span>
+      </div>
+
+      <!-- 12. npm -->
+      <div class="tool-box-card reveal" style="--tool-color: #CB3837; --tool-glow: rgba(203, 56, 55, 0.35);">
+        <div class="tool-icon-wrap"><i data-lucide="box"></i></div>
+        <span class="tool-title-name">npm</span>
+        <span class="tool-cat-lbl">Package Manager</span>
+      </div>
+
+      <!-- 13. Express.js -->
+      <div class="tool-box-card reveal" style="--tool-color: #A78BFA; --tool-glow: rgba(167, 139, 250, 0.35);">
+        <div class="tool-icon-wrap"><i data-lucide="cpu"></i></div>
+        <span class="tool-title-name">Express.js</span>
+        <span class="tool-cat-lbl">Framework</span>
+      </div>
+
+      <!-- 14. JavaScript -->
+      <div class="tool-box-card reveal" style="--tool-color: #F7DF1E; --tool-glow: rgba(247, 223, 30, 0.35);">
+        <div class="tool-icon-wrap"><i data-lucide="file-code"></i></div>
+        <span class="tool-title-name">JavaScript</span>
+        <span class="tool-cat-lbl">ES6+ Language</span>
       </div>
     </div>
   </div>
