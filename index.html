@@ -171,9 +171,10 @@ section{padding:6rem 0;position:relative;z-index:2}
   height: 100vh;
   max-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  padding-top: 62px;
+  padding: 62px 0 0 0 !important;
+  margin-bottom: 0 !important;
   overflow: hidden;
   background: #08080a;
   box-sizing: border-box;
@@ -231,8 +232,9 @@ section{padding:6rem 0;position:relative;z-index:2}
   padding: 0 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  min-height: calc(100vh - 80px);
+  align-items: flex-end;
+  min-height: calc(100vh - 62px);
+  height: calc(100vh - 62px);
 }
 
 .hero-left-block {
@@ -241,7 +243,8 @@ section{padding:6rem 0;position:relative;z-index:2}
   align-items: flex-start;
   gap: 1.1rem;
   z-index: 5;
-  padding-bottom: 2rem;
+  align-self: center;
+  padding-bottom: 2.5rem;
 }
 .hero-year-tag {
   font-family: 'Space Grotesk', sans-serif;
@@ -376,11 +379,16 @@ section{padding:6rem 0;position:relative;z-index:2}
   align-items: flex-end;
   height: 100%;
   z-index: 2;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 .hero-portrait-img {
-  height: clamp(480px, 82vh, 760px);
+  height: clamp(540px, 90vh, 880px);
   width: auto;
   object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  margin-bottom: 0;
   filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.95)) contrast(1.04) brightness(1.02);
   transition: transform 0.4s ease;
   user-select: none;
