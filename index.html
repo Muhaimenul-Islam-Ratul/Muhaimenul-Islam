@@ -383,7 +383,7 @@ section{padding:6rem 0;position:relative;z-index:2}
   padding-bottom: 0;
 }
 .hero-portrait-img {
-  height: clamp(540px, 90vh, 880px);
+  height: clamp(460px, 76vh, 720px);
   width: auto;
   object-fit: contain;
   object-position: bottom center;
@@ -407,9 +407,11 @@ section{padding:6rem 0;position:relative;z-index:2}
 @media (max-width: 992px) {
   .hero-editorial-wrap {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding-top: 1.5rem;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    height: auto;
     min-height: auto;
+    align-items: flex-start;
   }
   .hero-typography-layer {
     padding: 1.5rem 3vw;
@@ -419,9 +421,10 @@ section{padding:6rem 0;position:relative;z-index:2}
     grid-column: 1;
     order: 2;
     justify-content: center;
+    margin-top: 0;
   }
   .hero-portrait-img {
-    height: clamp(340px, 52vh, 480px);
+    height: clamp(420px, 65vh, 600px);
   }
   .hero-left-block {
     grid-column: 1;
@@ -429,6 +432,7 @@ section{padding:6rem 0;position:relative;z-index:2}
     align-items: center;
     text-align: center;
     padding-bottom: 0;
+    gap: 0.5rem;
   }
   .hero-meta-divider {
     justify-content: center;
@@ -449,7 +453,7 @@ section{padding:6rem 0;position:relative;z-index:2}
     height: auto;
     min-height: 100vh;
     padding-top: 68px;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
   }
   .hero-typography-layer {
     padding: 4.8rem 1rem 1rem 1rem;
@@ -463,14 +467,16 @@ section{padding:6rem 0;position:relative;z-index:2}
   }
   .hero-editorial-wrap {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.25rem;
     padding: 0 1rem;
+    height: auto;
     min-height: auto;
+    align-items: flex-start;
   }
   .hero-left-block {
     align-items: center;
     text-align: center;
-    gap: 0.75rem;
+    gap: 0.4rem;
     padding-bottom: 0;
   }
   .hero-year-tag {
@@ -511,12 +517,17 @@ section{padding:6rem 0;position:relative;z-index:2}
     grid-column: 1;
     order: 2;
     justify-content: center;
-    margin-top: 0.2rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .hero-portrait-img {
-    height: clamp(260px, 40vh, 380px);
+    height: clamp(380px, 64vh, 560px);
     width: auto;
+  }
+  @media (max-width: 480px) {
+    .hero-portrait-img {
+      height: clamp(360px, 68vh, 540px);
+    }
   }
   .hero-action-btns {
     justify-content: center;
@@ -530,82 +541,145 @@ section{padding:6rem 0;position:relative;z-index:2}
     border-radius: 5px;
   }
   .hero-scroll-down {
-    margin-top: 0.4rem;
+    margin-top: 0.1rem;
     font-size: 1.2rem;
   }
 }
 
 
 /* ── 2: ABOUT ── */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  column-gap: 4rem;
-  row-gap: 0;
-  align-items: start;
+#about .wrap {
+  max-width: 1380px;
 }
-.about-left-col {
-  grid-column: 1;
-  grid-row: 1 / span 2;
+.about-card-container {
+  background: #09090b;
+  border: 1.5px solid rgba(255, 230, 0, 0.35);
+  border-radius: 24px;
+  padding: 3.5rem 2.5rem 3.5rem 2.5rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(255, 230, 0, 0.02);
+  width: 100%;
 }
-.about-img-container {
-  grid-column: 2;
-  grid-row: 1;
+.about-s-label {
+  font-family: 'Space Grotesk', 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #FFE600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
 }
-.about-stats {
-  grid-column: 2;
-  grid-row: 2;
+.about-s-title {
+  font-family: 'Stack Sans Text', 'Space Grotesk', -apple-system, sans-serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
 }
-.about-text p{color:var(--muted2);line-height:1.9;margin-bottom:1rem;font-size:.97rem}
-.about-text p:last-child{margin-bottom:0}
-.about-text strong{color:var(--accent);font-weight:600}
-.info-list{display:flex;flex-direction:column;gap:.85rem;margin-top:2rem}
-.info-row{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;
-  background:var(--card2);border:1px solid var(--border);border-radius:8px;
-  font-size:.85rem;transition:border-color .2s}
-.info-row:hover{border-color:var(--accent)}
-.info-icon{font-size:1rem;flex-shrink:0;width:28px;text-align:center}
-.info-key{color:var(--muted);font-family:'Space Mono',monospace;font-size:.68rem;
-  letter-spacing:.08em;text-transform:uppercase;min-width:70px}
-.info-val{color:var(--text);font-weight:500}
-.about-img-container {
+.about-s-title span {
+  color: #FFE600;
+}
+.about-bio-text {
+  color: #D1D5DB;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 860px;
+  margin: 0 auto 2.2rem auto;
+}
+.about-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 3.2rem;
+  width: 100%;
+}
+.about-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 1.05rem;
+  background: #0d0d12;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 0.83rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+}
+.about-pill:hover {
+  border-color: #FFE600;
+  background: rgba(255, 230, 0, 0.04);
+  transform: translateY(-2px);
+}
+.about-pill-icon {
+  color: #FFE600;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+.about-stats-wrapper {
   position: relative;
   display: flex;
+  align-items: center;
   justify-content: center;
-}
-.about-img {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
   width: 100%;
-  max-width: 400px;
-  height: auto;
+}
+.about-stats-line {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  right: 2rem;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(255, 230, 0, 0.4) 15%, rgba(255, 230, 0, 0.4) 85%, transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+.about-stats-grid {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+}
+.about-stat-box {
+  background: #08080a;
+  border: 1.5px solid rgba(255, 230, 0, 0.35);
+  border-radius: 14px;
+  padding: 0.85rem 2.5rem;
+  text-align: center;
+  min-width: 140px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.about-stat-box:hover {
+  border-color: #FFE600;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 230, 0, 0.15);
+}
+.about-stat-num {
+  font-family: 'Stack Sans Text', 'Space Grotesk', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #FFE600;
+  line-height: 1.1;
   display: block;
 }
-.about-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
+.about-stat-lbl {
+  font-size: 0.72rem;
+  color: #A1A1AA;
+  margin-top: 0.3rem;
+  display: block;
+  font-weight: 500;
 }
-.about-stats .about-card {
-  padding: 1rem 0.5rem;
-}
-@media(max-width: 600px) {
-  .about-stats {
-    gap: 0.4rem;
-  }
-  .about-stats .about-card {
-    padding: 0.65rem 0.2rem;
-  }
-  .about-stats .about-card .big {
-    font-size: 1.6rem;
-  }
-  .about-stats .about-card .lbl {
-    font-size: 0.65rem;
-  }
-}
-.about-card{padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;
-  text-align:center;transition:border-color .3s,transform .3s}
-.about-card:hover{border-color:var(--accent);transform:translateY(-4px)}
-.about-card .big{font-family:'Space Mono',monospace;font-size:2.5rem;font-weight:700;color:var(--accent)}
-.about-card .lbl{color:var(--muted2);font-size:.8rem;margin-top:.25rem}
+
 
 /* ── 3: SKILLS ── */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
@@ -1375,24 +1449,36 @@ footer a{color:var(--accent);text-decoration:none}
     transform: translateY(-1px);
   }
   .hero-grid,.shopify-grid,.contact-grid{grid-template-columns:1fr}
-  .about-grid {
-    grid-template-columns: 1fr;
-    row-gap: 1.5rem;
+  .about-card-container {
+    padding: 2.2rem 1.25rem 2rem 1.25rem;
+    border-radius: 18px;
   }
-  .about-img-container {
-    grid-column: 1;
-    grid-row: auto;
-    order: 1;
+  .about-bio-text {
+    font-size: 0.88rem;
+    margin-bottom: 1.75rem;
   }
-  .about-left-col {
-    grid-column: 1;
-    grid-row: auto;
-    order: 2;
+  .about-pills-row {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
   }
-  .about-stats {
-    grid-column: 1;
-    grid-row: auto;
-    order: 3;
+  .about-pill {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.78rem;
+  }
+  .about-stats-grid {
+    gap: 0.75rem;
+    width: 100%;
+  }
+  .about-stat-box {
+    flex: 1 1 calc(33.33% - 0.75rem);
+    min-width: 90px;
+    padding: 0.75rem 0.5rem;
+  }
+  .about-stat-num {
+    font-size: 1.5rem;
+  }
+  .about-stat-lbl {
+    font-size: 0.65rem;
   }
   .code-win{display:none}
   .edu-grid{grid-template-columns:1fr}
@@ -1633,42 +1719,59 @@ footer a{color:var(--accent);text-decoration:none}
 <!-- ══════════ 02 ABOUT ══════════ -->
 <section id="about" class="alt-bg">
   <div class="wrap">
-    <div class="about-grid">
-      <div class="about-left-col">
-        <!-- 1. Headings Group -->
-        <div class="about-header-group">
-          <p class="s-label reveal">Who I am</p>
-          <h2 class="s-title reveal">About <em>Me</em></h2>
-          <div class="divider reveal"></div>
+    <div class="about-card-container reveal">
+      <!-- 1. Label Tag -->
+      <p class="about-s-label">WHO I AM</p>
+      
+      <!-- 2. Main Title -->
+      <h2 class="about-s-title">About <span>Me</span></h2>
+      
+      <!-- 3. Bio Paragraph -->
+      <p class="about-bio-text">
+        I'm a Full-Stack MERN Developer based in Dhaka, Bangladesh, with 2.5+ years of hands-on experience building scalable, user-focused web applications. Passionate about clean code and great user experience.
+      </p>
+
+      <!-- 4. Info Pills Row -->
+      <div class="about-pills-row">
+        <div class="about-pill">
+          <i data-lucide="map-pin" class="about-pill-icon"></i>
+          <span>Notunbazar, Dhaka, BD</span>
         </div>
-        
-        <!-- 2. Description Text -->
-        <div class="about-text reveal">
-          <p>I'm a <strong>Full-Stack MERN Developer</strong> based in Dhaka, Bangladesh, with 1+ year of hands-on experience building scalable, user-focused web applications.</p>
-          <p>My journey started through rigorous training at <strong>Programming Hero</strong>, where I completed multiple real-world full-stack projects using modern technologies. I'm currently working as a <strong>Shopify Developer at Softvence</strong>, customizing themes with HTML, CSS, JavaScript and Liquid.</p>
-          <p>I'm passionate about clean code, great user experience, and building software that actually solves problems. I'm always eager to learn new technologies and contribute to fast-growing teams.</p>
+        <div class="about-pill">
+          <i data-lucide="mail" class="about-pill-icon"></i>
+          <span>miratul646@gmail.com</span>
         </div>
-        
-        <!-- 3. Details Info List -->
-        <div class="info-list">
-          <div class="info-row reveal"><span class="info-icon"><i data-lucide="map-pin"></i></span><span class="info-key">Location</span><span class="info-val">Notunbazar, Dhaka, BD</span></div>
-          <div class="info-row reveal"><span class="info-icon"><i data-lucide="mail"></i></span><span class="info-key">Email</span><span class="info-val">miratul846@gmail.com</span></div>
-          <div class="info-row reveal"><span class="info-icon"><i data-lucide="phone"></i></span><span class="info-key">Phone</span><span class="info-val">01794-727201</span></div>
-          <div class="info-row reveal"><span class="info-icon"><img src="Icon/social.png" alt="GitHub" class="github-custom-icon"></span><span class="info-key">GitHub</span><span class="info-val">Muhaimenul-Islam-Ratul</span></div>
-          <div class="info-row reveal"><span class="info-icon"><i data-lucide="graduation-cap"></i></span><span class="info-key">Degree</span><span class="info-val">BSc in CSE — Dhaka Int'l University</span></div>
+        <div class="about-pill">
+          <i data-lucide="phone" class="about-pill-icon"></i>
+          <span>01794-727201</span>
+        </div>
+        <div class="about-pill">
+          <i data-lucide="github" class="about-pill-icon"></i>
+          <span>Muhaimenul-Islam-Ratul</span>
+        </div>
+        <div class="about-pill">
+          <i data-lucide="graduation-cap" class="about-pill-icon"></i>
+          <span>BSc in CSE – Dhaka Int'l University</span>
         </div>
       </div>
-      
-      <!-- 4. Profile Image -->
-      <div class="about-img-container reveal">
-        <img src="Untitled design (47).png" alt="Muhaimenul Islam" class="about-img">
-      </div>
-      
-      <!-- 5. Stats Badges Row -->
-      <div class="about-stats">
-        <div class="about-card reveal"><span class="big" data-count="1" data-suffix="+">0</span><div class="lbl">Year Exp</div></div>
-        <div class="about-card reveal"><span class="big" data-count="3.82" data-decimals="2">0.00</span><div class="lbl">CGPA</div></div>
-        <div class="about-card reveal"><span class="big" data-count="100" data-suffix="%">0</span><div class="lbl">Passion</div></div>
+
+      <!-- 5. Bottom Stats Row -->
+      <div class="about-stats-wrapper">
+        <div class="about-stats-line"></div>
+        <div class="about-stats-grid">
+          <div class="about-stat-box">
+            <span class="about-stat-num" data-count="2.5" data-decimals="1" data-suffix="+">0.0</span>
+            <span class="about-stat-lbl">Years Exp</span>
+          </div>
+          <div class="about-stat-box">
+            <span class="about-stat-num" data-count="3.82" data-decimals="2">0.00</span>
+            <span class="about-stat-lbl">CGPA</span>
+          </div>
+          <div class="about-stat-box">
+            <span class="about-stat-num" data-count="100" data-suffix="%">0</span>
+            <span class="about-stat-lbl">Passion</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
