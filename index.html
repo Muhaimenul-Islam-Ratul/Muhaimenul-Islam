@@ -2184,7 +2184,23 @@ footer a{color:var(--accent);text-decoration:none}
         </div>
       </div>
 
-      <!-- 6. Nova 210 (Shopify) -->
+      <!-- 6. Back to Somalia (Shopify) -->
+      <div class="p-card reveal" data-category="shopify">
+        <div class="p-top"></div>
+        <div class="p-body">
+          <div class="p-img-box">
+            <img src="Project/back-to-somalia.png" alt="Back to Somalia Shopify Storefront" class="p-img">
+          </div>
+          <p class="p-type">Shopify Website</p>
+          <h3 class="p-name">Back To Somalia</h3>
+          <div class="p-links">
+            <a href="https://github.com/Muhaimenul-Islam-Ratul" target="_blank" class="p-link"><img src="Icon/social.png" alt="GitHub" class="github-custom-icon"> GitHub ↗</a>
+            <a href="https://backtosomaliabook.com/" target="_blank" class="p-link p-link-live"><i data-lucide="external-link"></i> Live Demo ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Nova 210 (Shopify) -->
       <div class="p-card reveal" data-category="shopify">
         <div class="p-top"></div>
         <div class="p-body">
@@ -2196,6 +2212,22 @@ footer a{color:var(--accent);text-decoration:none}
           <div class="p-links">
             <a href="https://github.com/Muhaimenul-Islam-Ratul" target="_blank" class="p-link"><img src="Icon/social.png" alt="GitHub" class="github-custom-icon"> GitHub ↗</a>
             <a href="https://www.nova210.com/" target="_blank" class="p-link p-link-live"><i data-lucide="external-link"></i> Live Demo ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. EZ Highlights (Shopify) -->
+      <div class="p-card reveal" data-category="shopify">
+        <div class="p-top"></div>
+        <div class="p-body">
+          <div class="p-img-box">
+            <img src="Project/ez-highlights.png" alt="EZ Highlights Shopify Storefront" class="p-img">
+          </div>
+          <p class="p-type">Shopify Website</p>
+          <h3 class="p-name">EZ Highlights</h3>
+          <div class="p-links">
+            <a href="https://github.com/Muhaimenul-Islam-Ratul" target="_blank" class="p-link"><img src="Icon/social.png" alt="GitHub" class="github-custom-icon"> GitHub ↗</a>
+            <a href="https://ez-highlights.myshopify.com/" target="_blank" class="p-link p-link-live"><i data-lucide="external-link"></i> Live Demo ↗</a>
           </div>
         </div>
       </div>
@@ -2669,14 +2701,14 @@ if (srvGrid && srvDots.length > 0) {
 
 lucide.createIcons();
 
-/* ── PROJECT FILTERING & VIEW MORE (8 PER BATCH) ── */
+/* ── PROJECT FILTERING & VIEW MORE (12 PER BATCH) ── */
 const tabBtns = document.querySelectorAll('.tab-btn');
 const projCards = document.querySelectorAll('.p-card');
 const projGrid = document.querySelector('.proj-grid');
 const projLoadMoreBtn = document.getElementById('projLoadMoreBtn');
 const projLoadMoreWrap = document.querySelector('.proj-load-more-wrap');
 
-let currentLimit = 8;
+let currentLimit = 12;
 let currentFilter = 'all';
 
 function updateProjectVisibility() {
@@ -2716,7 +2748,7 @@ updateProjectVisibility();
 
 if (projLoadMoreBtn) {
   projLoadMoreBtn.addEventListener('click', () => {
-    currentLimit += 8;
+    currentLimit += 12;
     updateProjectVisibility();
   });
 }
@@ -2728,7 +2760,7 @@ if (tabBtns.length > 0 && projCards.length > 0) {
       btn.classList.add('active');
 
       currentFilter = btn.dataset.filter || 'all';
-      currentLimit = 8;
+      currentLimit = 12;
 
       projGrid.style.opacity = '0';
       projGrid.style.transform = 'translateY(10px)';
