@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://muhaimenul-islam-ratul.github.io/Muhaimenul-Islam/sitemap.xml
