@@ -166,6 +166,153 @@ section{padding:6rem 0;position:relative;z-index:2}
 .s-title em{font-style:normal;color:var(--accent)}
 .divider{width:48px;height:3px;background:var(--accent);margin-bottom:2.75rem}
 
+/* ── WHITE SECTIONS (Alternating Light Sections) ── */
+.white-section {
+  background: #FFFFFF !important;
+  color: #111827 !important;
+  border-top: 1px solid #E5E7EB;
+  border-bottom: 1px solid #E5E7EB;
+  position: relative;
+  z-index: 2;
+}
+.white-section .s-label {
+  color: #D97706 !important;
+}
+.white-section .s-title {
+  color: #111827 !important;
+}
+.white-section .s-title em {
+  color: #D97706 !important;
+}
+.white-section .divider {
+  background: #D97706 !important;
+}
+.white-section .github-custom-icon {
+  filter: brightness(0);
+}
+.white-section .btn-g {
+  background: #F3F4F6 !important;
+  color: #111827 !important;
+  border: 1px solid #D1D5DB !important;
+}
+.white-section .btn-g:hover {
+  background: #E5E7EB !important;
+  border-color: #D97706 !important;
+  color: #D97706 !important;
+}
+
+/* Skills in White Section */
+#skills.white-section .tool-cat-lbl {
+  color: #6B7280;
+}
+
+/* Thesis in White Section */
+#thesis.white-section .thesis-title {
+  color: #111827;
+}
+#thesis.white-section .thesis-sub {
+  color: #D97706;
+}
+#thesis.white-section .thesis-overview {
+  color: #4B5563;
+}
+#thesis.white-section .thesis-impact {
+  border-left-color: #D97706;
+  color: #374151;
+  background: rgba(245, 158, 11, 0.05);
+  padding: 0.85rem 1rem;
+  border-radius: 0 8px 8px 0;
+}
+#thesis.white-section .thesis-img-container {
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08), 0 0 0 1px #E5E7EB;
+}
+
+/* Shopify in White Section */
+#shopify.white-section .shopify-text p {
+  color: #4B5563;
+}
+#shopify.white-section .feat-row {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  color: #111827;
+}
+#shopify.white-section .feat-row:hover {
+  border-color: #D97706;
+}
+#shopify.white-section .feat-row span:first-child {
+  color: #D97706;
+  display: flex;
+  align-items: center;
+}
+#shopify.white-section .shop-stat-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+#shopify.white-section .shop-stat-card:hover {
+  border-color: #D97706;
+}
+#shopify.white-section .shop-stat-num {
+  color: #D97706;
+}
+#shopify.white-section .shop-stat-card:last-child .shop-stat-num {
+  color: #059669 !important;
+}
+#shopify.white-section .shop-stat-card strong {
+  color: #111827;
+}
+#shopify.white-section .shop-stat-lbl {
+  color: #4B5563;
+}
+
+/* Contact in White Section */
+#contact.white-section .contact-text p {
+  color: #4B5563;
+}
+#contact.white-section .c-link {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  color: #111827;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+#contact.white-section .c-link:hover {
+  border-color: #D97706;
+}
+#contact.white-section .c-icon {
+  background: rgba(234, 179, 8, 0.1);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  color: #B45309;
+}
+#contact.white-section .c-label {
+  color: #6B7280;
+}
+#contact.white-section .c-val {
+  color: #111827;
+}
+#contact.white-section .c-form input,
+#contact.white-section .c-form textarea {
+  background: #FFFFFF;
+  border: 1px solid #D1D5DB;
+  color: #111827;
+}
+#contact.white-section .c-form input:focus,
+#contact.white-section .c-form textarea:focus {
+  border-color: #D97706;
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.2);
+}
+#contact.white-section .c-form input::placeholder,
+#contact.white-section .c-form textarea::placeholder {
+  color: #9CA3AF;
+}
+#contact.white-section .c-submit {
+  background: #EAB308;
+  color: #111827;
+}
+#contact.white-section .c-submit:hover {
+  background: #D97706;
+  color: #FFFFFF;
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -610,20 +757,20 @@ section{padding:6rem 0;position:relative;z-index:2}
   max-width: 1380px;
 }
 .about-card-container {
-  background: #09090b;
-  border: 1.5px solid rgba(255, 230, 0, 0.35);
+  background: #FFFFFF;
+  border: 1.5px solid rgba(217, 119, 6, 0.35);
   border-radius: 24px;
   padding: 3.5rem 2.5rem 3.5rem 2.5rem;
   text-align: center;
   position: relative;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(255, 230, 0, 0.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   width: 100%;
 }
 .about-s-label {
   font-family: 'Space Grotesk', 'Space Mono', monospace;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #FFE600;
+  color: #D97706;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   margin-bottom: 0.6rem;
@@ -632,15 +779,15 @@ section{padding:6rem 0;position:relative;z-index:2}
   font-family: 'Stack Sans Text', 'Space Grotesk', -apple-system, sans-serif;
   font-size: clamp(2.2rem, 4.5vw, 3.5rem);
   font-weight: 800;
-  color: #FFFFFF;
+  color: #111827;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
 }
 .about-s-title span {
-  color: #FFE600;
+  color: #D97706;
 }
 .about-bio-text {
-  color: #D1D5DB;
+  color: #4B5563;
   font-size: 0.95rem;
   line-height: 1.7;
   max-width: 860px;
@@ -660,22 +807,22 @@ section{padding:6rem 0;position:relative;z-index:2}
   align-items: center;
   gap: 0.55rem;
   padding: 0.6rem 1.05rem;
-  background: #0d0d12;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;
   border-radius: 10px;
-  color: #FFFFFF;
+  color: #1F2937;
   font-size: 0.83rem;
   font-weight: 500;
   white-space: nowrap;
   transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
 }
 .about-pill:hover {
-  border-color: #FFE600;
-  background: rgba(255, 230, 0, 0.04);
+  border-color: #D97706;
+  background: rgba(245, 158, 11, 0.08);
   transform: translateY(-2px);
 }
 .about-pill-icon {
-  color: #FFE600;
+  color: #D97706;
   width: 1.1rem;
   height: 1.1rem;
   flex-shrink: 0;
@@ -695,7 +842,7 @@ section{padding:6rem 0;position:relative;z-index:2}
   left: 2rem;
   right: 2rem;
   height: 1.5px;
-  background: linear-gradient(90deg, transparent, rgba(255, 230, 0, 0.4) 15%, rgba(255, 230, 0, 0.4) 85%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(217, 119, 6, 0.35) 15%, rgba(217, 119, 6, 0.35) 85%, transparent);
   z-index: 1;
   pointer-events: none;
 }
@@ -708,31 +855,31 @@ section{padding:6rem 0;position:relative;z-index:2}
   flex-wrap: wrap;
 }
 .about-stat-box {
-  background: #08080a;
-  border: 1.5px solid rgba(255, 230, 0, 0.35);
+  background: #FFFFFF;
+  border: 1.5px solid rgba(217, 119, 6, 0.35);
   border-radius: 14px;
   padding: 0.85rem 2.5rem;
   text-align: center;
   min-width: 140px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 .about-stat-box:hover {
-  border-color: #FFE600;
+  border-color: #D97706;
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 230, 0, 0.15);
+  box-shadow: 0 8px 25px rgba(217, 119, 6, 0.18);
 }
 .about-stat-num {
   font-family: 'Stack Sans Text', 'Space Grotesk', sans-serif;
   font-size: 1.85rem;
   font-weight: 800;
-  color: #FFE600;
+  color: #D97706;
   line-height: 1.1;
   display: block;
 }
 .about-stat-lbl {
   font-size: 0.72rem;
-  color: #A1A1AA;
+  color: #6B7280;
   margin-top: 0.3rem;
   display: block;
   font-weight: 500;
@@ -794,8 +941,8 @@ section{padding:6rem 0;position:relative;z-index:2}
 }
 
 .tool-box-card {
-  background: #0B0B0F;
-  border: 1px solid #1C1C26;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
   border-radius: 14px;
   padding: 1.6rem 0.8rem 1.4rem 0.8rem;
   display: flex;
@@ -807,12 +954,13 @@ section{padding:6rem 0;position:relative;z-index:2}
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
   position: relative;
   min-height: 145px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .tool-box-card:hover {
   transform: translateY(-5px);
   border-color: var(--tool-color, var(--accent));
-  box-shadow: 0 0 25px var(--tool-glow, rgba(255, 230, 0, 0.25));
+  box-shadow: 0 10px 25px var(--tool-glow, rgba(234, 179, 8, 0.2));
 }
 
 .tool-icon-wrap {
@@ -832,7 +980,7 @@ section{padding:6rem 0;position:relative;z-index:2}
   font-family: 'Stack Sans Text', 'Space Grotesk', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #111827;
   line-height: 1.2;
 }
 
@@ -889,7 +1037,7 @@ section{padding:6rem 0;position:relative;z-index:2}
 .proj-main-title {
   font-size: clamp(1.85rem, 3.2vw, 2.6rem);
   font-weight: 800;
-  color: #FFFFFF;
+  color: #111827;
   letter-spacing: -0.02em;
   margin: 0;
   font-family: 'Stack Sans Text', 'Space Grotesk', sans-serif;
@@ -898,7 +1046,7 @@ section{padding:6rem 0;position:relative;z-index:2}
   color: var(--accent);
 }
 .proj-subtitle {
-  color: #9CA3AF;
+  color: #6B7280;
   font-size: clamp(0.85rem, 1.1vw, 0.98rem);
   margin-top: 0.45rem;
   font-family: 'Space Grotesk', sans-serif;
@@ -914,14 +1062,14 @@ section{padding:6rem 0;position:relative;z-index:2}
 .proj-tabs {
   display: inline-flex;
   align-items: center;
-  background: rgba(18, 18, 24, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;
   border-radius: 9999px;
   padding: 4px;
   gap: 4px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   max-width: 100%;
   overflow-x: auto;
   scrollbar-width: none;
@@ -932,7 +1080,7 @@ section{padding:6rem 0;position:relative;z-index:2}
 .tab-btn {
   background: transparent;
   border: none;
-  color: #D1D5DB;
+  color: #4B5563;
   padding: 0.55rem 1.45rem;
   border-radius: 9999px;
   font-family: 'Space Grotesk', sans-serif;
@@ -944,14 +1092,14 @@ section{padding:6rem 0;position:relative;z-index:2}
   white-space: nowrap;
 }
 .tab-btn:hover {
-  color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.07);
+  color: #111827;
+  background: rgba(0, 0, 0, 0.05);
 }
 .tab-btn.active {
   background: var(--accent);
-  color: #000000;
+  color: #111827;
   font-weight: 700;
-  box-shadow: 0 0 18px rgba(255, 230, 0, 0.4);
+  box-shadow: 0 2px 10px rgba(234, 179, 8, 0.35);
 }
 
 /* 4-column Grid */
@@ -978,8 +1126,8 @@ section{padding:6rem 0;position:relative;z-index:2}
 
 /* Project Card */
 .p-card {
-  background: #0E0E12;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
   border-radius: 12px;
   overflow: hidden;
   min-width: 0;
@@ -990,7 +1138,7 @@ section{padding:6rem 0;position:relative;z-index:2}
   transform: perspective(1000px) rotateX(8deg) translateY(30px) scale(0.98);
   filter: blur(3px);
   transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 .p-card.in {
   opacity: 1;
@@ -999,8 +1147,8 @@ section{padding:6rem 0;position:relative;z-index:2}
 }
 .p-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 230, 0, 0.35);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 230, 0, 0.12);
+  border-color: rgba(234, 179, 8, 0.5);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.09), 0 0 15px rgba(234, 179, 8, 0.12);
 }
 .p-top {
   display: none;
@@ -1009,9 +1157,9 @@ section{padding:6rem 0;position:relative;z-index:2}
   width: 100%;
   height: 165px;
   overflow: hidden;
-  background: #15151B;
+  background: #F3F4F6;
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid #E5E7EB;
 }
 .p-img {
   width: 100%;
@@ -1035,7 +1183,7 @@ section{padding:6rem 0;position:relative;z-index:2}
   font-family: 'Stack Sans Text', 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 1.02rem;
-  color: #FFFFFF;
+  color: #111827;
   margin-bottom: 0.3rem;
   line-height: 1.3;
   white-space: nowrap;
@@ -1045,8 +1193,8 @@ section{padding:6rem 0;position:relative;z-index:2}
 .p-type {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.8rem;
-  font-weight: 500;
-  color: #D1A054;
+  font-weight: 600;
+  color: #B45309;
   margin-bottom: 0.65rem;
   letter-spacing: 0.01em;
   text-transform: none;
@@ -1058,11 +1206,11 @@ section{padding:6rem 0;position:relative;z-index:2}
   gap: 0.6rem;
   margin-top: auto;
   padding-top: 0.6rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid #F3F4F6;
 }
 .p-link {
   font-size: 0.75rem;
-  color: var(--muted2);
+  color: #4B5563;
   text-decoration: none;
   font-family: 'Space Mono', monospace;
   display: inline-flex;
@@ -1071,24 +1219,24 @@ section{padding:6rem 0;position:relative;z-index:2}
   transition: color 0.2s, border-color 0.2s, background 0.2s;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
 }
 .p-link:hover {
-  color: var(--accent);
+  color: #111827;
   border-color: var(--accent);
-  background: rgba(255, 230, 0, 0.06);
+  background: rgba(234, 179, 8, 0.08);
 }
 .p-link-live {
-  color: var(--accent);
-  border-color: rgba(255, 230, 0, 0.3);
-  background: rgba(255, 230, 0, 0.08);
+  color: #92400E;
+  border-color: rgba(217, 119, 6, 0.35);
+  background: rgba(234, 179, 8, 0.1);
 }
 .p-link-live:hover {
   background: var(--accent);
-  color: #000000;
+  color: #111827;
   border-color: var(--accent);
-  box-shadow: 0 0 10px rgba(255, 230, 0, 0.35);
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.35);
 }
 
 /* ── THESIS SECTION ── */
@@ -1109,12 +1257,12 @@ section{padding:6rem 0;position:relative;z-index:2}
   height: 640px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 229, 255, 0.1);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(234, 179, 8, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .thesis-img-container:hover {
   transform: translateY(-8px) rotate(-1deg);
-  box-shadow: 0 30px 60px rgba(0, 229, 255, 0.15), 0 0 0 1px rgba(0, 229, 255, 0.3);
+  box-shadow: 0 25px 55px rgba(234, 179, 8, 0.2), 0 0 0 1px rgba(234, 179, 8, 0.4);
 }
 .thesis-img {
   width: 100%;
@@ -1529,8 +1677,8 @@ section{padding:6rem 0;position:relative;z-index:2}
   transition:opacity .6s,transform .6s,border-color .3s}
 .c-link.in{opacity:1;transform:translateX(0)}
 .c-link:hover{border-color:var(--accent);transform:translateX(5px) !important}
-.c-icon{width:42px;height:42px;background:rgba(255,230,0,.08);border:1px solid rgba(255,230,0,.2);
-  border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;color:var(--accent)}
+.c-icon{width:42px;height:42px;background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.3);
+  border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;color:var(--accent2)}
 .c-info{display:flex;flex-direction:column;gap:.08rem}
 .c-label{font-family:'Space Mono',monospace;font-size:.62rem;color:var(--muted);
   letter-spacing:.1em;text-transform:uppercase}
@@ -1539,23 +1687,23 @@ section{padding:6rem 0;position:relative;z-index:2}
 /* contact form */
 .c-form{display:flex;flex-direction:column;gap:1rem}
 .c-form input,.c-form textarea{
-  width:100%;padding:.85rem 1.1rem;background:var(--card2);
-  border:1px solid var(--border);border-radius:8px;
+  width:100%;padding:.85rem 1.1rem;background:#FFFFFF;
+  border:1px solid #D1D5DB;border-radius:8px;
   color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:.9rem;
   outline:none;transition:border-color .2s,box-shadow .2s;resize:vertical}
-.c-form input:focus,.c-form textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,230,0,.15)}
+.c-form input:focus,.c-form textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(234,179,8,.2)}
 .c-form textarea{min-height:130px}
 .c-form input::placeholder,.c-form textarea::placeholder{color:var(--muted)}
 .c-submit{padding:.8rem 1.75rem;background:var(--accent);
-  color:#000000;border:none;border-radius:7px;font-family:'Space Grotesk',sans-serif;
-  font-size:.9rem;font-weight:700;cursor:cursor;transition:opacity .2s,transform .2s;align-self:flex-start}
+  color:#111827;border:none;border-radius:7px;font-family:'Space Grotesk',sans-serif;
+  font-size:.9rem;font-weight:700;cursor:pointer;transition:opacity .2s,transform .2s;align-self:flex-start}
 .c-submit:hover{opacity:.85;transform:translateY(-2px)}
 
 /* footer */
 footer{border-top:1px solid var(--border);padding:2rem;text-align:center;
   color:var(--muted);font-family:'Space Mono',monospace;font-size:.75rem;
   position:relative;z-index:2}
-footer a{color:var(--accent);text-decoration:none}
+footer a{color:var(--accent2);text-decoration:none}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;
   max-width:1200px;margin:0 auto;flex-wrap:wrap;gap:1rem}
 
@@ -1900,7 +2048,7 @@ footer a{color:var(--accent);text-decoration:none}
 </section>
 
 <!-- ══════════ 02 ABOUT ══════════ -->
-<section id="about" class="alt-bg">
+<section id="about" class="white-section">
   <div class="wrap">
     <div class="about-card-container reveal">
       <!-- 1. Label Tag -->
@@ -1961,7 +2109,7 @@ footer a{color:var(--accent);text-decoration:none}
 </section>
 
 <!-- ══════════ 03 TOOLS & TECHNOLOGIES ══════════ -->
-<section id="skills">
+<section id="skills" class="white-section">
   <div class="wrap">
     <p class="s-label reveal">MY TOOLBOX</p>
     <h2 class="s-title reveal">Tools &amp; <em>Technologies</em></h2>
@@ -2011,7 +2159,7 @@ footer a{color:var(--accent);text-decoration:none}
       </div>
 
       <!-- 7. GitHub -->
-      <div class="tool-box-card reveal" style="--tool-color: #FFFFFF; --tool-glow: rgba(255, 255, 255, 0.35);">
+      <div class="tool-box-card reveal" style="--tool-color: #181717; --tool-glow: rgba(24, 23, 23, 0.15);">
         <div class="tool-icon-wrap"><img src="Icon/social.png" alt="GitHub" class="github-custom-icon" style="width: 2.2rem; height: 2.2rem;"></div>
         <span class="tool-title-name">GitHub</span>
         <span class="tool-cat-lbl">Version Control</span>
@@ -2242,11 +2390,11 @@ footer a{color:var(--accent);text-decoration:none}
 </section>
 
 <!-- ══════════ 06 PROJECTS ══════════ -->
-<section id="projects" class="alt-bg">
+<section id="projects" class="white-section">
   <div class="wrap">
     <div class="proj-header reveal">
       <div class="proj-header-top">
-        <span class="proj-badge-num">4</span>
+        <span class="proj-badge-num" id="projBadgeNum">7</span>
         <h2 class="proj-main-title">Featured <span>Projects</span></h2>
       </div>
       <p class="proj-subtitle">Building digital experiences that make an impact.</p>
@@ -2259,7 +2407,6 @@ footer a{color:var(--accent);text-decoration:none}
         <button class="tab-btn" data-filter="ai">AI &amp; ML</button>
         <button class="tab-btn" data-filter="shopify">Shopify</button>
         <button class="tab-btn" data-filter="dynamic">Dynamic</button>
-        <button class="tab-btn" data-filter="static">Static</button>
       </div>
     </div>
 
@@ -2291,57 +2438,6 @@ footer a{color:var(--accent);text-decoration:none}
           <div class="p-links">
             <a href="https://github.com/Muhaimenul-Islam-Ratul/guavavision-ai" target="_blank" class="p-link"><img src="Icon/social.png" alt="GitHub" class="github-custom-icon"> GitHub ↗</a>
             <a href="https://guavavision-ai.vercel.app/" target="_blank" class="p-link p-link-live"><i data-lucide="external-link"></i> Live Demo ↗</a>
-          </div>
-        </div>
-      </div>
-      <!-- 1. Flower Shop (Dynamic) -->
-      <div class="p-card reveal" data-category="dynamic">
-        <div class="p-top"></div>
-        <div class="p-body">
-          <p class="p-type">Dynamic Website</p>
-          <h3 class="p-name">Flower Shop</h3>
-          <div class="p-links">
-            <a href="https://github.com/Muhaimenul-Islam-Ratul" target="_blank" class="p-link"><img src="Icon/social.png" alt="GitHub" class="github-custom-icon"> GitHub ↗</a>
-            <a href="https://your-live-link-here.com" target="_blank" class="p-link p-link-live"><i data-lucide="external-link"></i> Live Demo ↗</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- 2. Bistro Boss (Dynamic) -->
-      <div class="p-card reveal" data-category="dynamic">
-        <div class="p-top"></div>
-        <div class="p-body">
-          <p class="p-type">Dynamic Website</p>
-          <h3 class="p-name">Bistro Boss Restaurant</h3>
-          <div class="p-links">
-            <a href="https://github.com/Muhaimenul-Islam-Ratul" target="_blank" class="p-link"><img src="Icon/social.png" alt="GitHub" class="github-custom-icon"> GitHub ↗</a>
-            <a href="https://your-live-link-here.com" target="_blank" class="p-link p-link-live"><i data-lucide="external-link"></i> Live Demo ↗</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. Gamer Zoon (Static) -->
-      <div class="p-card reveal" data-category="static">
-        <div class="p-top"></div>
-        <div class="p-body">
-          <p class="p-type">Static Website</p>
-          <h3 class="p-name">Gamer Zoon</h3>
-          <div class="p-links">
-            <a href="https://github.com/Muhaimenul-Islam-Ratul" target="_blank" class="p-link"><img src="Icon/social.png" alt="GitHub" class="github-custom-icon"> GitHub ↗</a>
-            <a href="https://your-live-link-here.com" target="_blank" class="p-link p-link-live"><i data-lucide="external-link"></i> Live Demo ↗</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. Traveler's Haven (Static) -->
-      <div class="p-card reveal" data-category="static">
-        <div class="p-top"></div>
-        <div class="p-body">
-          <p class="p-type">Static Website</p>
-          <h3 class="p-name">Travel Agency Web</h3>
-          <div class="p-links">
-            <a href="https://github.com/Muhaimenul-Islam-Ratul" target="_blank" class="p-link"><img src="Icon/social.png" alt="GitHub" class="github-custom-icon"> GitHub ↗</a>
-            <a href="https://your-live-link-here.com" target="_blank" class="p-link p-link-live"><i data-lucide="external-link"></i> Live Demo ↗</a>
           </div>
         </div>
       </div>
@@ -2437,7 +2533,7 @@ footer a{color:var(--accent);text-decoration:none}
 </section>
 
 <!-- ══════════ 06.5 THESIS PUBLICATION ══════════ -->
-<section id="thesis">
+<section id="thesis" class="white-section">
   <div class="wrap">
     <p class="s-label reveal">My Research &amp; Publication</p>
     <h2 class="s-title reveal">Thesis <em>Book</em></h2>
@@ -2522,7 +2618,7 @@ footer a{color:var(--accent);text-decoration:none}
 </section>
 
 <!-- ══════════ 08 SHOPIFY SPOTLIGHT ══════════ -->
-<section id="shopify" class="alt-bg">
+<section id="shopify" class="white-section">
   <div class="wrap">
     <p class="s-label reveal">Spotlight</p>
     <h2 class="s-title reveal">Shopify <em>Expertise</em></h2>
@@ -2589,7 +2685,7 @@ footer a{color:var(--accent);text-decoration:none}
 </section>
 
 <!-- ══════════ 12 CONTACT ══════════ -->
-<section id="contact" class="alt-bg">
+<section id="contact" class="white-section">
   <div class="wrap">
     <p class="s-label reveal">Let's connect</p>
     <h2 class="s-title reveal">Get in <em>Touch</em></h2>
@@ -2895,44 +2991,70 @@ if (srvGrid && srvDots.length > 0) {
 
 lucide.createIcons();
 
-/* ── PROJECT FILTERING & VIEW MORE (12 PER BATCH) ── */
+/* ── PROJECT FILTERING & 8-ITEM (4x2) VIEW ALL LOGIC ── */
 const tabBtns = document.querySelectorAll('.tab-btn');
 const projCards = document.querySelectorAll('.p-card');
 const projGrid = document.querySelector('.proj-grid');
 const projLoadMoreBtn = document.getElementById('projLoadMoreBtn');
 const projLoadMoreWrap = document.querySelector('.proj-load-more-wrap');
+const projBadgeNum = document.getElementById('projBadgeNum');
 
-let currentLimit = 12;
+const INITIAL_LIMIT = 8; // 4 columns x 2 rows
 let currentFilter = 'all';
+let isExpanded = false;
 
 function updateProjectVisibility() {
-  let matchingCount = 0;
+  const visibleCards = [];
 
   projCards.forEach(card => {
     const cat = card.dataset.category || '';
     const matchesFilter = (currentFilter === 'all' || cat.includes(currentFilter));
-
     if (matchesFilter) {
-      matchingCount++;
-      if (matchingCount <= currentLimit) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
+      visibleCards.push(card);
     } else {
       card.style.display = 'none';
     }
   });
 
-  if (projLoadMoreWrap) {
-    if (matchingCount > currentLimit) {
-      projLoadMoreWrap.style.display = 'block';
-      if (projLoadMoreBtn) {
-        const remaining = matchingCount - currentLimit;
-        projLoadMoreBtn.innerHTML = `<i data-lucide="grid"></i> View All (${remaining} More Projects)`;
+  if (projBadgeNum) {
+    projBadgeNum.textContent = visibleCards.length;
+  }
+
+  const total = visibleCards.length;
+
+  if (total > INITIAL_LIMIT) {
+    if (isExpanded) {
+      // Show all cards
+      visibleCards.forEach(card => {
+        card.style.display = '';
+      });
+      if (projLoadMoreWrap && projLoadMoreBtn) {
+        projLoadMoreWrap.style.display = 'block';
+        projLoadMoreBtn.innerHTML = '<i data-lucide="chevron-up"></i> Show Less';
         if (window.lucide) lucide.createIcons();
       }
     } else {
+      // Show only first 8 (4x2 grid)
+      visibleCards.forEach((card, idx) => {
+        if (idx < INITIAL_LIMIT) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      if (projLoadMoreWrap && projLoadMoreBtn) {
+        projLoadMoreWrap.style.display = 'block';
+        const remaining = total - INITIAL_LIMIT;
+        projLoadMoreBtn.innerHTML = `<i data-lucide="grid"></i> View All (${remaining} More Projects)`;
+        if (window.lucide) lucide.createIcons();
+      }
+    }
+  } else {
+    // 8 or fewer projects: show all and hide the button
+    visibleCards.forEach(card => {
+      card.style.display = '';
+    });
+    if (projLoadMoreWrap) {
       projLoadMoreWrap.style.display = 'none';
     }
   }
@@ -2942,8 +3064,14 @@ updateProjectVisibility();
 
 if (projLoadMoreBtn) {
   projLoadMoreBtn.addEventListener('click', () => {
-    currentLimit += 12;
+    isExpanded = !isExpanded;
     updateProjectVisibility();
+    if (!isExpanded) {
+      const projSection = document.getElementById('projects');
+      if (projSection) {
+        projSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   });
 }
 
@@ -2954,7 +3082,7 @@ if (tabBtns.length > 0 && projCards.length > 0) {
       btn.classList.add('active');
 
       currentFilter = btn.dataset.filter || 'all';
-      currentLimit = 12;
+      isExpanded = false; // Reset to 8 cards on filter change
 
       projGrid.style.opacity = '0';
       projGrid.style.transform = 'translateY(10px)';
