@@ -1192,84 +1192,198 @@ section{padding:6rem 0;position:relative;z-index:2}
 .t-list{list-style:none;margin-top:.65rem}
 .t-list li{color:var(--muted2);font-size:.88rem;line-height:1.7;padding-left:1rem;
   position:relative;margin-bottom:.3rem}
-/* ── TOOLBOX / TOOLS & TECHNOLOGIES SECTION ── */
+/* ── TOOLBOX / TOOLS & TECHNOLOGIES SECTION (HEXAGON STYLE) ── */
 #skills {
-  background: var(--bg);
-  padding: 6rem 0;
+  padding: 3.5rem 0;
   position: relative;
+  width: 100%;
 }
-.toolbox-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 1.1rem;
+.tools-fullwidth-wrap {
+  max-width: 1600px !important;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
-
-.tool-box-card {
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
-  border-radius: 14px;
-  padding: 1.6rem 0.8rem 1.4rem 0.8rem;
+@media (min-width: 1600px) {
+  .tools-fullwidth-wrap {
+    width: 1600px;
+    max-width: 1600px !important;
+  }
+}
+.tools-card-container {
+  background: linear-gradient(135deg, #FFFDF8 0%, #FFF9EC 50%, #FFF4DE 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.25);
+  border-radius: 28px;
+  padding: 2.4rem 2.8rem 2.8rem 2.8rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(245, 158, 11, 0.08), 0 4px 20px rgba(0, 0, 0, 0.03);
+  width: 100%;
+}
+.tools-decor-wave {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 280px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+.tools-badge {
+  position: absolute;
+  top: 1.6rem;
+  left: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.38rem 1.15rem;
+  background: #FF9E0B;
+  background: linear-gradient(135deg, #FFB800, #F59E0B);
+  border: 1.5px solid #FFFFFF;
+  border-radius: 9999px;
+  color: #FFFFFF;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+  z-index: 2;
+}
+.tools-header {
+  text-align: center;
+  margin-bottom: 2.2rem;
+  position: relative;
+  z-index: 2;
+}
+.tools-title {
+  font-family: 'Stack Sans Text', 'Space Grotesk', -apple-system, sans-serif;
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  display: inline-block;
+}
+.tools-title-highlight {
+  color: #F59E0B;
+}
+.tools-hex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.hex-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 0.5rem;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  text-decoration: none;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hex-item:hover {
+  transform: translateY(-6px);
+}
+.hex-shape-wrap {
   position: relative;
-  min-height: 145px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-}
-
-.tool-box-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--tool-color, var(--accent));
-  box-shadow: 0 10px 25px var(--tool-glow, rgba(234, 179, 8, 0.2));
-}
-
-.tool-icon-wrap {
-  font-size: 2.2rem;
-  color: var(--tool-color, var(--accent));
+  width: 82px;
+  height: 94px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.2rem;
-  transition: transform 0.3s ease;
+  filter: drop-shadow(0 8px 14px rgba(245, 158, 11, 0.28));
+  transition: filter 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.tool-box-card:hover .tool-icon-wrap {
-  transform: scale(1.15);
+.hex-item:hover .hex-shape-wrap {
+  filter: drop-shadow(0 14px 24px rgba(245, 158, 11, 0.48));
 }
-
-.tool-title-name {
-  font-family: 'Stack Sans Text', 'Space Grotesk', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #111827;
-  line-height: 1.2;
+.hex-bg-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
-
-.tool-cat-lbl {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--muted);
-  letter-spacing: 0.08em;
+.hex-icon-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hex-item:hover .hex-icon-content {
+  transform: scale(1.12);
+}
+.hex-label {
+  margin-top: 0.8rem;
+  font-family: 'Stack Sans Text', 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #0F172A;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.015em;
+  transition: color 0.2s ease;
+}
+.hex-item:hover .hex-label {
+  color: #F59E0B;
 }
 
 @media (max-width: 1200px) {
-  .toolbox-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .tools-hex-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 1.8rem;
+  }
+  .hex-item {
+    flex: 0 0 calc(20% - 1.5rem);
   }
 }
-@media (max-width: 768px) {
-  .toolbox-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.85rem;
+@media (max-width: 850px) {
+  .tools-fullwidth-wrap {
+    padding: 0 1rem;
+  }
+  .tools-card-container {
+    padding: 2.2rem 1.2rem;
+    border-radius: 22px;
+  }
+  .tools-badge {
+    position: static;
+    margin-bottom: 1.2rem;
+    display: inline-flex;
+  }
+  .tools-header {
+    text-align: center;
+  }
+  .tools-hex-row {
+    gap: 1.2rem 1rem;
+  }
+  .hex-item {
+    flex: 0 0 calc(33.33% - 0.8rem);
+  }
+  .hex-shape-wrap {
+    width: 72px;
+    height: 82px;
+  }
+  .hex-icon-content {
+    width: 38px;
+    height: 38px;
+  }
+  .hex-label {
+    font-size: 0.84rem;
+    margin-top: 0.55rem;
   }
 }
 @media (max-width: 480px) {
-  .toolbox-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+  .hex-item {
+    flex: 0 0 calc(50% - 0.75rem);
   }
 }
 
@@ -2428,109 +2542,173 @@ footer a{color:var(--accent2);text-decoration:none}
 </section>
 
 <!-- ══════════ 03 TOOLS & TECHNOLOGIES ══════════ -->
-<section id="skills" class="white-section">
-  <div class="wrap">
-    <p class="s-label reveal">MY TOOLBOX</p>
-    <h2 class="s-title reveal">Tools &amp; <em>Technologies</em></h2>
-    <div class="divider reveal" style="margin-bottom: 3rem;"></div>
-    
-    <div class="toolbox-grid">
-      <!-- 1. React.js -->
-      <div class="tool-box-card reveal" style="--tool-color: #61DAFB; --tool-glow: rgba(97, 218, 251, 0.35);">
-        <div class="tool-icon-wrap"><i data-lucide="atom"></i></div>
-        <span class="tool-title-name">React.js</span>
-        <span class="tool-cat-lbl">Frontend</span>
+<section id="skills" class="white-section tools-fullwidth-section">
+  <div class="wrap tools-fullwidth-wrap">
+    <div class="tools-card-container reveal">
+      <!-- Top-left Option Badge as shown in 2nd image -->
+      <div class="tools-badge">5. Hexagon Icon Style</div>
+
+      <!-- Decorative Background Organic Wave -->
+      <svg class="tools-decor-wave" viewBox="0 0 320 160" fill="none" aria-hidden="true">
+        <path d="M0 160C120 100 220 90 320 160H0Z" fill="#FDE68A" fill-opacity="0.45"/>
+        <path d="M140 160C210 120 260 125 320 160H140Z" fill="#FBBF24" fill-opacity="0.25"/>
+      </svg>
+
+      <!-- Center Title -->
+      <div class="tools-header">
+        <h2 class="tools-title">Tools &amp; <span class="tools-title-highlight">Technologies</span></h2>
       </div>
 
-      <!-- 2. Node.js -->
-      <div class="tool-box-card reveal" style="--tool-color: #22C55E; --tool-glow: rgba(34, 197, 94, 0.35);">
-        <div class="tool-icon-wrap"><i data-lucide="server"></i></div>
-        <span class="tool-title-name">Node.js</span>
-        <span class="tool-cat-lbl">Backend</span>
-      </div>
-
-      <!-- 3. MongoDB -->
-      <div class="tool-box-card reveal" style="--tool-color: #10B981; --tool-glow: rgba(16, 185, 129, 0.35);">
-        <div class="tool-icon-wrap"><i data-lucide="database"></i></div>
-        <span class="tool-title-name">MongoDB</span>
-        <span class="tool-cat-lbl">Database</span>
-      </div>
-
-      <!-- 4. Firebase -->
-      <div class="tool-box-card reveal" style="--tool-color: #F59E0B; --tool-glow: rgba(245, 158, 11, 0.35);">
-        <div class="tool-icon-wrap"><i data-lucide="flame"></i></div>
-        <span class="tool-title-name">Firebase</span>
-        <span class="tool-cat-lbl">Auth / DB</span>
-      </div>
-
-      <!-- 5. Tailwind -->
-      <div class="tool-box-card reveal" style="--tool-color: #06B6D4; --tool-glow: rgba(6, 182, 212, 0.35);">
-        <div class="tool-icon-wrap"><i data-lucide="wind"></i></div>
-        <span class="tool-title-name">Tailwind</span>
-        <span class="tool-cat-lbl">CSS Framework</span>
-      </div>
-
-      <!-- 6. Bootstrap -->
-      <div class="tool-box-card reveal" style="--tool-color: #8B5CF6; --tool-glow: rgba(139, 92, 246, 0.35);">
-        <div class="tool-icon-wrap"><i data-lucide="layout-grid"></i></div>
-        <span class="tool-title-name">Bootstrap</span>
-        <span class="tool-cat-lbl">UI Library</span>
-      </div>
-
-      <!-- 7. GitHub -->
-      <div class="tool-box-card reveal" style="--tool-color: #181717; --tool-glow: rgba(24, 23, 23, 0.15);">
-        <div class="tool-icon-wrap"><img src="Icon/social.png" alt="GitHub" class="github-custom-icon" style="width: 2.2rem; height: 2.2rem;"></div>
-        <span class="tool-title-name">GitHub</span>
-        <span class="tool-cat-lbl">Version Control</span>
-      </div>
-
-      <!-- 8. VS Code -->
-      <div class="tool-box-card reveal" style="--tool-color: #3B82F6; --tool-glow: rgba(59, 130, 246, 0.35);">
-        <div class="tool-icon-wrap"><i data-lucide="code-2"></i></div>
-        <span class="tool-title-name">VS Code</span>
-        <span class="tool-cat-lbl">Editor</span>
-      </div>
-
-      <!-- 9. Shopify -->
-      <div class="tool-box-card reveal" style="--tool-color: #95BF47; --tool-glow: rgba(149, 191, 71, 0.35);">
-        <div class="tool-icon-wrap"><img src="Icon/shopify.jpg" alt="Shopify" class="shopify-custom-icon" style="width: 2.2rem; height: 2.2rem; border-radius: 6px;"></div>
-        <span class="tool-title-name">Shopify</span>
-        <span class="tool-cat-lbl">E-Commerce</span>
-      </div>
-
-      <!-- 10. Postman -->
-      <div class="tool-box-card reveal" style="--tool-color: #FF6C37; --tool-glow: rgba(255, 108, 55, 0.35);">
-        <div class="tool-icon-wrap"><i data-lucide="send"></i></div>
-        <span class="tool-title-name">Postman</span>
-        <span class="tool-cat-lbl">API Testing</span>
-      </div>
-
-      <!-- 11. Figma -->
-      <div class="tool-box-card reveal" style="--tool-color: #F24E1E; --tool-glow: rgba(242, 78, 30, 0.35);">
-        <div class="tool-icon-wrap"><i data-lucide="palette"></i></div>
-        <span class="tool-title-name">Figma</span>
-        <span class="tool-cat-lbl">Design</span>
-      </div>
-
-      <!-- 12. npm -->
-      <div class="tool-box-card reveal" style="--tool-color: #CB3837; --tool-glow: rgba(203, 56, 55, 0.35);">
-        <div class="tool-icon-wrap"><i data-lucide="box"></i></div>
-        <span class="tool-title-name">npm</span>
-        <span class="tool-cat-lbl">Package Manager</span>
-      </div>
-
-      <!-- 13. Express.js -->
-      <div class="tool-box-card reveal" style="--tool-color: #A78BFA; --tool-glow: rgba(167, 139, 250, 0.35);">
-        <div class="tool-icon-wrap"><i data-lucide="cpu"></i></div>
-        <span class="tool-title-name">Express.js</span>
-        <span class="tool-cat-lbl">Framework</span>
-      </div>
-
-      <!-- 14. JavaScript -->
-      <div class="tool-box-card reveal" style="--tool-color: #F7DF1E; --tool-glow: rgba(247, 223, 30, 0.35);">
-        <div class="tool-icon-wrap"><i data-lucide="file-code"></i></div>
-        <span class="tool-title-name">JavaScript</span>
-        <span class="tool-cat-lbl">ES6+ Language</span>
+      <!-- 10 Hexagons Row -->
+      <div class="tools-hex-row">
+        <div class="hex-item">
+          <div class="hex-shape-wrap">
+            <svg class="hex-bg-svg" viewBox="0 0 86 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 35.21 8.50 Q 43.00 4.00 50.79 8.50 L 74.18 22.00 Q 81.97 26.50 81.97 35.50 L 81.97 62.50 Q 81.97 71.50 74.18 76.00 L 50.79 89.50 Q 43.00 94.00 35.21 89.50 L 11.82 76.00 Q 4.03 71.50 4.03 62.50 L 4.03 35.50 Q 4.03 26.50 11.82 22.00 Z" fill="#FFFFFF" stroke="rgba(245, 158, 11, 0.28)" stroke-width="1.6"/>
+              </svg>
+            <div class="hex-icon-content">
+              <svg viewBox="0 0 32 32" width="38" height="38" fill="none" aria-label="React">
+                  <circle cx="16" cy="16" r="2.8" fill="#00D8FF"/>
+                  <ellipse cx="16" cy="16" rx="14" ry="5.5" stroke="#00D8FF" stroke-width="1.6" fill="none"/>
+                  <ellipse cx="16" cy="16" rx="14" ry="5.5" stroke="#00D8FF" stroke-width="1.6" fill="none" transform="rotate(60 16 16)"/>
+                  <ellipse cx="16" cy="16" rx="14" ry="5.5" stroke="#00D8FF" stroke-width="1.6" fill="none" transform="rotate(120 16 16)"/>
+                </svg>
+            </div>
+          </div>
+          <span class="hex-label">React</span>
+        </div>
+        <div class="hex-item">
+          <div class="hex-shape-wrap">
+            <svg class="hex-bg-svg" viewBox="0 0 86 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 35.21 8.50 Q 43.00 4.00 50.79 8.50 L 74.18 22.00 Q 81.97 26.50 81.97 35.50 L 81.97 62.50 Q 81.97 71.50 74.18 76.00 L 50.79 89.50 Q 43.00 94.00 35.21 89.50 L 11.82 76.00 Q 4.03 71.50 4.03 62.50 L 4.03 35.50 Q 4.03 26.50 11.82 22.00 Z" fill="#FFFFFF" stroke="rgba(245, 158, 11, 0.28)" stroke-width="1.6"/>
+              </svg>
+            <div class="hex-icon-content">
+              <svg viewBox="0 0 32 32" width="38" height="38" fill="none" aria-label="Node.js">
+                  <path d="M16 2.5 L28 9.5 L28 22.5 L16 29.5 L4 22.5 L4 9.5 Z" stroke="#22C55E" stroke-width="2.4" stroke-linejoin="round" fill="none"/>
+                  <text x="16" y="20.5" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" letter-spacing="-0.02em">JS</text>
+                </svg>
+            </div>
+          </div>
+          <span class="hex-label">Node.js</span>
+        </div>
+        <div class="hex-item">
+          <div class="hex-shape-wrap">
+            <svg class="hex-bg-svg" viewBox="0 0 86 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 35.21 8.50 Q 43.00 4.00 50.79 8.50 L 74.18 22.00 Q 81.97 26.50 81.97 35.50 L 81.97 62.50 Q 81.97 71.50 74.18 76.00 L 50.79 89.50 Q 43.00 94.00 35.21 89.50 L 11.82 76.00 Q 4.03 71.50 4.03 62.50 L 4.03 35.50 Q 4.03 26.50 11.82 22.00 Z" fill="#FFFFFF" stroke="rgba(245, 158, 11, 0.28)" stroke-width="1.6"/>
+              </svg>
+            <div class="hex-icon-content">
+              <svg viewBox="0 0 40 40" width="38" height="38" fill="none" aria-label="Express">
+                  <text x="20" y="28" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="24" font-weight="700" fill="#15803D" text-anchor="middle" letter-spacing="-0.05em">ex</text>
+                </svg>
+            </div>
+          </div>
+          <span class="hex-label">Express</span>
+        </div>
+        <div class="hex-item">
+          <div class="hex-shape-wrap">
+            <svg class="hex-bg-svg" viewBox="0 0 86 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 35.21 8.50 Q 43.00 4.00 50.79 8.50 L 74.18 22.00 Q 81.97 26.50 81.97 35.50 L 81.97 62.50 Q 81.97 71.50 74.18 76.00 L 50.79 89.50 Q 43.00 94.00 35.21 89.50 L 11.82 76.00 Q 4.03 71.50 4.03 62.50 L 4.03 35.50 Q 4.03 26.50 11.82 22.00 Z" fill="#FFFFFF" stroke="rgba(245, 158, 11, 0.28)" stroke-width="1.6"/>
+              </svg>
+            <div class="hex-icon-content">
+              <svg viewBox="0 0 24 32" width="30" height="38" fill="none" aria-label="MongoDB">
+                  <path d="M12 1.5 C11.5 2.5 5 11 5 18.5 C5 24 9 29 12 30.5 C15 29 19 24 19 18.5 C19 11 12.5 2.5 12 1.5 Z" fill="#10B981"/>
+                  <path d="M12 1.5 C12 1.5 12 30.5 12 30.5 C15 29 19 24 19 18.5 C19 11 12.5 2.5 12 1.5 Z" fill="#059669"/>
+                  <line x1="12" y1="2" x2="12" y2="30" stroke="#FFFFFF" stroke-width="0.8" opacity="0.6"/>
+                </svg>
+            </div>
+          </div>
+          <span class="hex-label">MongoDB</span>
+        </div>
+        <div class="hex-item">
+          <div class="hex-shape-wrap">
+            <svg class="hex-bg-svg" viewBox="0 0 86 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 35.21 8.50 Q 43.00 4.00 50.79 8.50 L 74.18 22.00 Q 81.97 26.50 81.97 35.50 L 81.97 62.50 Q 81.97 71.50 74.18 76.00 L 50.79 89.50 Q 43.00 94.00 35.21 89.50 L 11.82 76.00 Q 4.03 71.50 4.03 62.50 L 4.03 35.50 Q 4.03 26.50 11.82 22.00 Z" fill="#FFFFFF" stroke="rgba(245, 158, 11, 0.28)" stroke-width="1.6"/>
+              </svg>
+            <div class="hex-icon-content">
+              <svg viewBox="0 0 38 42" width="34" height="38" fill="none" aria-label="Shopify">
+                  <path d="M33 7c-.3-.2-.7-.2-.9 0l-3 2-2.2-5.2c-.2-.5-.7-.8-1.2-.8h-.4C25 3 22.6 4.5 21 6c-2.2 2.1-3.6 5.3-4 9l-4.3 1.3c-.4.1-.7.4-.8.8L7.4 34.6c-.1.5.2 1 .7 1.2l20.2 6.6c.2.1.4.1.6 0l8.6-3.4c.4-.2.6-.5.6-.9l-.3-30.7c0-.2-.1-.4-.3-.5L33 7z" fill="#95BF47"/>
+                  <path d="M29.1 9.1l-3 2-2.2-5.2c-.2-.5-.7-.8-1.2-.8h-.4c-.3.2-.5.4-.7.7l-2 4.6 14.8-1.3z" fill="#7AB55C"/>
+                  <path d="M25 16.7c-1.2-.2-2.3-.6-3-1.2-.8-.7-1-1.6-1-2.8.2-2.1 1.8-3.6 3.9-3.4 1.2.1 2.2.7 2.8 1.4.5.7.7 1.6.5 2.6l-3.2 3.4zm-1.7 11.2c.4 0 .9-.1 1.2-.2 1.7-.7 3.1-2 3.3-3.9.3-2.6-1.2-4.3-3.6-5l-1.9-.7c-.8-.3-1.2-.7-1.3-1.2-.1-.9.6-1.5 1.6-1.4.8.1 1.5.5 1.9 1l1.4-2.1c-.8-.8-1.9-1.2-3.2-1.3-2-.2-3.6 1-3.9 2.8-.3 2.4 1.1 3.9 3.3 4.7l1.8.6c.9.3 1.3.8 1.2 1.4-.1.9-.9 1.4-1.8 1.3-1-.1-2-.7-2.6-1.4l-1.7 2.1c.9 1.2 2.4 2 4 2z" fill="#FFFFFF"/>
+                </svg>
+            </div>
+          </div>
+          <span class="hex-label">Shopify</span>
+        </div>
+        <div class="hex-item">
+          <div class="hex-shape-wrap">
+            <svg class="hex-bg-svg" viewBox="0 0 86 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 35.21 8.50 Q 43.00 4.00 50.79 8.50 L 74.18 22.00 Q 81.97 26.50 81.97 35.50 L 81.97 62.50 Q 81.97 71.50 74.18 76.00 L 50.79 89.50 Q 43.00 94.00 35.21 89.50 L 11.82 76.00 Q 4.03 71.50 4.03 62.50 L 4.03 35.50 Q 4.03 26.50 11.82 22.00 Z" fill="#FFFFFF" stroke="rgba(245, 158, 11, 0.28)" stroke-width="1.6"/>
+              </svg>
+            <div class="hex-icon-content">
+              <svg viewBox="0 0 36 36" width="38" height="38" fill="none" aria-label="Liquid">
+                  <path d="M12 9 C9 9 7 11 7 14 L7 16 C7 17.5 6 18 4.5 18 C6 18 7 18.5 7 20 L7 22 C7 25 9 27 12 27" stroke="#00B2A9" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M24 9 C27 9 29 11 29 14 L29 16 C29 17.5 30 18 31.5 18 C30 18 29 18.5 29 20 L29 22 C29 25 27 27 24 27" stroke="#00B2A9" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="20" y1="10" x2="16" y2="26" stroke="#00B2A9" stroke-width="2.6" stroke-linecap="round"/>
+                </svg>
+            </div>
+          </div>
+          <span class="hex-label">Liquid</span>
+        </div>
+        <div class="hex-item">
+          <div class="hex-shape-wrap">
+            <svg class="hex-bg-svg" viewBox="0 0 86 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 35.21 8.50 Q 43.00 4.00 50.79 8.50 L 74.18 22.00 Q 81.97 26.50 81.97 35.50 L 81.97 62.50 Q 81.97 71.50 74.18 76.00 L 50.79 89.50 Q 43.00 94.00 35.21 89.50 L 11.82 76.00 Q 4.03 71.50 4.03 62.50 L 4.03 35.50 Q 4.03 26.50 11.82 22.00 Z" fill="#FFFFFF" stroke="rgba(245, 158, 11, 0.28)" stroke-width="1.6"/>
+              </svg>
+            <div class="hex-icon-content">
+              <svg viewBox="0 0 36 36" width="38" height="38" fill="none" aria-label="Theme">
+                  <path d="M18 5 L31 12 L18 19 L5 12 Z" fill="#3B82F6" stroke="#2563EB" stroke-width="1.2" stroke-linejoin="round"/>
+                  <path d="M5 18 L18 25 L31 18" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M5 24 L18 31 L31 24" stroke="#1D4ED8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+          </div>
+          <span class="hex-label">Theme</span>
+        </div>
+        <div class="hex-item">
+          <div class="hex-shape-wrap">
+            <svg class="hex-bg-svg" viewBox="0 0 86 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 35.21 8.50 Q 43.00 4.00 50.79 8.50 L 74.18 22.00 Q 81.97 26.50 81.97 35.50 L 81.97 62.50 Q 81.97 71.50 74.18 76.00 L 50.79 89.50 Q 43.00 94.00 35.21 89.50 L 11.82 76.00 Q 4.03 71.50 4.03 62.50 L 4.03 35.50 Q 4.03 26.50 11.82 22.00 Z" fill="#FFFFFF" stroke="rgba(245, 158, 11, 0.28)" stroke-width="1.6"/>
+              </svg>
+            <div class="hex-icon-content">
+              <svg viewBox="0 0 48 48" width="38" height="38" aria-label="SEO">
+                  <path fill="#4285F4" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.6 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.2 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9z"/>
+                  <path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16.1 19 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.2 6.1 29.4 4 24 4c-10.7 0-19.6 6.9-22.7 16.3l5 3.7z"/>
+                  <path fill="#FBBC05" d="M24 44c5.3 0 10.1-2.1 13.6-5.4l-6.3-5.2C29.3 35.1 26.8 36 24 36c-5.3 0-9.7-3.4-11.3-8l-6.6 5.1C9.2 40.5 16 44 24 44z"/>
+                  <path fill="#EA4335" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4 5.4l6.3 5.2C41.2 35.3 44 30.1 44 24c0-1.3-.1-2.7-.4-3.9z"/>
+                </svg>
+            </div>
+          </div>
+          <span class="hex-label">SEO</span>
+        </div>
+        <div class="hex-item">
+          <div class="hex-shape-wrap">
+            <svg class="hex-bg-svg" viewBox="0 0 86 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 35.21 8.50 Q 43.00 4.00 50.79 8.50 L 74.18 22.00 Q 81.97 26.50 81.97 35.50 L 81.97 62.50 Q 81.97 71.50 74.18 76.00 L 50.79 89.50 Q 43.00 94.00 35.21 89.50 L 11.82 76.00 Q 4.03 71.50 4.03 62.50 L 4.03 35.50 Q 4.03 26.50 11.82 22.00 Z" fill="#FFFFFF" stroke="rgba(245, 158, 11, 0.28)" stroke-width="1.6"/>
+              </svg>
+            <div class="hex-icon-content">
+              <svg viewBox="0 0 36 36" width="38" height="38" fill="none" aria-label="Analytics">
+                  <rect x="5" y="21" width="6" height="11" rx="3" fill="#F9AB00"/>
+                  <rect x="15" y="12" width="6" height="20" rx="3" fill="#F9AB00"/>
+                  <rect x="25" y="3" width="6" height="29" rx="3" fill="#E37400"/>
+                </svg>
+            </div>
+          </div>
+          <span class="hex-label">Analytics</span>
+        </div>
+        <div class="hex-item">
+          <div class="hex-shape-wrap">
+            <svg class="hex-bg-svg" viewBox="0 0 86 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 35.21 8.50 Q 43.00 4.00 50.79 8.50 L 74.18 22.00 Q 81.97 26.50 81.97 35.50 L 81.97 62.50 Q 81.97 71.50 74.18 76.00 L 50.79 89.50 Q 43.00 94.00 35.21 89.50 L 11.82 76.00 Q 4.03 71.50 4.03 62.50 L 4.03 35.50 Q 4.03 26.50 11.82 22.00 Z" fill="#FFFFFF" stroke="rgba(245, 158, 11, 0.28)" stroke-width="1.6"/>
+              </svg>
+            <div class="hex-icon-content">
+              <svg viewBox="0 0 36 36" width="38" height="38" aria-label="Ahrefs">
+                  <rect width="36" height="36" rx="9" fill="#0050FD"/>
+                  <text x="18" y="26" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle">a</text>
+                </svg>
+            </div>
+          </div>
+          <span class="hex-label">Ahrefs</span>
+        </div>
       </div>
     </div>
   </div>
